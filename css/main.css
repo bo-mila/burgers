@@ -309,7 +309,7 @@ template {
 
 @font-face {
   font-family: 'Gagalin-Regular';
-  src: url("../fonts/Gagalin-Regular.woff") format("woff");
+  src: url("../fonts/gagalin-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -366,7 +366,9 @@ p {
   margin: 0; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .wrapper {
   overflow: hidden;
@@ -520,3 +522,52 @@ table {
   background-size: cover;
   background-position: center center;
   position: relative; }
+
+.first__container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.first__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.first__subtitle {
+  font-family: 'Lifehack-Medium';
+  padding-top: 20px;
+  font-size: 65px;
+  line-height: 1;
+  color: #fff; }
+
+.first__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+.title {
+  font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+  font-size: 72px;
+  color: #f9b43b;
+  line-height: 1; }
+  .title--color--black {
+    color: #2f3234; }
+  .title--color--white {
+    color: #fff; }
+  .title--centered {
+    text-align: center; }
+
+.scroll__down {
+  display: block;
+  width: 29px;
+  height: 14px;
+  background-image: url("../../img/icons/arrow-scroll.svg");
+  background-repeat: no-repeat;
+  background-size: contain; }
