@@ -1,8 +1,14 @@
-.btn__ref {
+.btn {
   padding: 10px 12px;
   border-radius: 4px;
   background-color: $red;
   color: $white;
   text-transform: uppercase;
   line-height: 1;
+  @include ubuntu(medium);
+  font-size: 13px;
+
+  &--black {
+    background-color: $black;
+  }
 }

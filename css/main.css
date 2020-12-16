@@ -447,9 +447,6 @@ table {
   margin-right: 50px; }
 
 .header__menu {
-  font-family: 'Ubuntu', Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 13px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -479,7 +476,10 @@ table {
   justify-content: flex-end;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 13px; }
 
 .nav__item {
   margin-right: 15px;
@@ -509,13 +509,18 @@ table {
   text-transform: uppercase;
   line-height: 1; }
 
-.btn__ref {
+.btn {
   padding: 10px 12px;
   border-radius: 4px;
   background-color: #e45028;
   color: #fff;
   text-transform: uppercase;
-  line-height: 1; }
+  line-height: 1;
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 13px; }
+  .btn--black {
+    background-color: #2f3234; }
 
 .first {
   background-image: url("../../img/bg/bg-first.png");
@@ -648,3 +653,57 @@ table {
   color: rgba(47, 50, 52, 0.8);
   line-height: 1.71;
   font-size: 14px; }
+
+.reviews__list {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.reviews__item {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  height: 50%;
+  position: relative;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+  .reviews__item:hover .reviews__hover {
+    opacity: 1; }
+
+.reviews__img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center; }
+
+.reviews__hover {
+  opacity: 0;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(47, 50, 52, 0.3);
+  -webkit-transition: opacity .8s;
+  -o-transition: opacity .8s;
+  transition: opacity .8s;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 33px;
+  padding-top: 50px; }
+
+.reviews__name {
+  font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px; }
+
+.reviews__text {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+  line-height: 1.71; }
