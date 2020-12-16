@@ -1,0 +1,49 @@
+.best {
+  @include bg-section (bg-we);
+}
+.best__container {
+  height: 100%;
+  display: flex;
+}
+.best__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.best__title {
+  margin-bottom: 50px;
+}
+.best__list {
+  display: flex;
+  justify-content: space-between;
+}
+.best__item {
+  // margin-right: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100%/3 - 28px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.best__icon {
+  width: 97px;
+  height: 89px;
+  margin-bottom: 33px;
+}
+.best__subtitle {
+  @include lifehack();
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: $black;
+}
+.best__desc {
+  @include ubuntu(light);
+  color: rgba($black,.8);
+  line-height: 1.71;
+  font-size: 14px;
+}

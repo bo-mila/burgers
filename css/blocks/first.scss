@@ -1,9 +1,5 @@
 .first {
-  background-image: url("../../img/bg/bg-first.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  position: relative;
+ @include bg-section (bg-first);
 }
 .first__container {
   height: 100%;
@@ -12,6 +8,9 @@
 .first__content {
   display: flex;
   align-items: center;
+}
+.first__img {
+  margin-right: 10px;
 }
 .first__subtitle {
   @include lifehack();

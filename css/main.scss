@@ -10,6 +10,7 @@ $z-header: 1;
 @import "./_misc/normalize.scss";
 @import "./_misc/fonts.scss";
 @import "./_misc/layout.scss";
+@import "./_misc/mixins.scss";
 
 
 @import "./blocks/header.scss";
@@ -18,3 +19,4 @@ $z-header: 1;
 @import "./blocks/first.scss";
 @import "./blocks/title.scss";
 @import "./blocks/scroll.scss";
+@import "./blocks/best.scss";

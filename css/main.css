@@ -489,7 +489,8 @@ table {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
   .nav__item::before {
     content: "";
     width: 4px;
@@ -537,6 +538,9 @@ table {
   -ms-flex-align: center;
   align-items: center; }
 
+.first__img {
+  margin-right: 10px; }
+
 .first__subtitle {
   font-family: 'Lifehack-Medium';
   padding-top: 20px;
@@ -571,3 +575,76 @@ table {
   background-image: url("../../img/icons/arrow-scroll.svg");
   background-repeat: no-repeat;
   background-size: contain; }
+
+.best {
+  background-image: url("../../img/bg/bg-we.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative; }
+
+.best__container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.best__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.best__title {
+  margin-bottom: 50px; }
+
+.best__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.best__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  width: calc(100%/3 - 28px); }
+  .best__item:last-child {
+    margin-right: 0; }
+
+.best__icon {
+  width: 97px;
+  height: 89px;
+  margin-bottom: 33px; }
+
+.best__subtitle {
+  font-family: 'Lifehack-Medium';
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #2f3234; }
+
+.best__desc {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 300;
+  color: rgba(47, 50, 52, 0.8);
+  line-height: 1.71;
+  font-size: 14px; }
