@@ -7,8 +7,17 @@
   line-height: 1;
   @include ubuntu(medium);
   font-size: 13px;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &--black {
     background-color: $black;
+  }
+
+  &--transp {
+    background-color: transparent;
   }
 }

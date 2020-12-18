@@ -62,7 +62,7 @@
     <section class="section best">
       <div class="container best__container">
         <div class="best__content">
-          <h2 class="title title--centered title--color--black best__title">мы лучшие</h2>
+          <h2 class="title title--color--black best__title">мы лучшие</h2>
           <ul class="best__list">
             <li class="best__item">
               <div class="best__icon">
@@ -229,6 +229,79 @@
         </li>
       </ul>
     </div>
+    <section class="section order">
+      <div class="container order__container">
+        <div class="order__content">
+          <h2 class="title title--centered order__title">закажите доставку</h2>
+          <form method="POST" id="orderform" class="order__form form">
+            <div class="form__col">
+              <div class="form__row">
+                <label class="form__block">
+                  <h6 class="form__subtitle">Имя</h6>
+                  <input type="text" name="name" class="form__input" required autocomplete="off">
+                </label>
+                <label class="form__block">
+                  <h6 class="form__subtitle">Телефон</h6>
+                  <input type="text" name="tel" class="form__input" required autocomplete="off">
+                </label>
+              </div>
+              <div class="form__row">
+                <label class="form__block">
+                  <h6 class="form__subtitle">Улица</h6>
+                  <input type="text" name="street" class="form__input" required autocomplete="off">
+                </label>
+              </div>
+              <div class="form__row">
+                <label class="form__block">
+                  <h6 class="form__subtitle">Дом</h6>
+                  <input type="text" name="house" class="form__input" required autocomplete="off">
+                </label>
+                <label class="form__block">
+                  <h6 class="form__subtitle">Корпус</h6>
+                  <input type="text" name="corp" class="form__input" required autocomplete="off">
+                </label>
+                <label class="form__block">
+                  <h6 class="form__subtitle">Квартира</h6>
+                  <input type="text" name="flat" class="form__input" required autocomplete="off">
+                </label>
+                <label class="form__block">
+                  <h6 class="form__subtitle">Этаж</h6>
+                  <input type="text" name="floor" class="form__input" required autocomplete="off">
+                </label>
+              </div>
+            </div>
+            <div class="form__col">
+              <div class="form__row">
+                <label class="form__block">
+                  <h6 class="form__subtitle">Комментарий</h6>
+                  <textarea name="comment" class="form__input form__input--textarea" required></textarea>
+                </label>
+              </div>
+              <div class="form__row form__row--left">
+                <label class="form__option option">
+                  <input type="radio" name="yes-no" class="option__radio">
+                  <div class="option__title">Потребуется сдача</div>
+                </label>
+                <label class="form__option option">
+                  <input type="radio" name="yes-no" class="option__radio">
+                  <div class="option__title">Оплата по карте</div>
+                </label>
+              </div>
+              <div class="form__row form__row--left">
+                <label class="form__option check">
+                  <input type="checkbox" name="checking" class="check__checkbox">
+                  <div class="check__title">Не перезванивать</div>
+                </label>
+              </div>
+              <div class="form__row form__row--left">
+                <button type="submit" class="btn buttons__sub">заказать</button>
+                <button type="reset" class="btn btn--transp buttons__res">очистить</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <div class="fixed-menu">
       <ul class="fixed-menu_list">
         <li class="fixed-menu__item"></li>

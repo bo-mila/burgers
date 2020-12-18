@@ -6,6 +6,7 @@ $black: #2f3234;
 
 $z-fixed-menu: 10;
 $z-header: 1;
+$z-order: 1;
 
 @import "./_misc/normalize.scss";
 @import "./_misc/fonts.scss";
@@ -21,3 +22,5 @@ $z-header: 1;
 @import "./blocks/scroll.scss";
 @import "./blocks/best.scss";
 @import "./blocks/reviews.scss";
+@import "./blocks/order.scss";
+@import "./blocks/form.scss";
