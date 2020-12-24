@@ -368,7 +368,8 @@ p {
 html, body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  position: relative; }
 
 .wrapper {
   overflow: hidden;
@@ -408,7 +409,8 @@ html, body {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -436,10 +438,9 @@ table {
 
 .header {
   position: absolute;
-  top: 0;
   width: 100%;
   z-index: 1;
-  padding-top: 20px; }
+  top: 20px; }
 
 .header__container {
   display: -webkit-box;
@@ -471,6 +472,16 @@ table {
   -ms-flex: 1;
   flex: 1;
   margin-right: 20px; }
+
+.header__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .nav__list {
   display: -webkit-box;
