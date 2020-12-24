@@ -48,7 +48,8 @@
   width: 100%;
   background: $white;
   border-radius: 3px;
-  border: 2px solid transparent;
+  // border: 2px solid transparent;
+  border: 2px solid $grey;
   outline: none;
   padding: 6px;
   color: $black;
