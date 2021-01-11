@@ -1,0 +1,26 @@
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: $z-header;
+  top: 20px;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  margin-right: 50px;
+}
+.header__menu {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.header__nav {
+  flex: 1;
+  margin-right: 20px;
+}
+.header__btn {
+  display: flex;
+}

@@ -1,0 +1,16 @@
+.title {
+  @include gagalin();
+  font-size: 72px;
+  color: $yellow;
+  line-height: 1;
+  // text-transform: uppercase;
+
+  &--color {
+    &--black {
+      color: $black;
+    }
+    &--white {
+      color: $white;
+    }
+  }
+}

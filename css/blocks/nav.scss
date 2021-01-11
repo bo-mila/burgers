@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+}
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  @include ubuntu(medium);
+  font-size: 13px;
+}
+.nav__item {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  color: $white;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: currentColor;
+    border-radius: 50%;
+    display: block;
+    margin-right: 15px;
+  }
+
+  &:first-child {
+    &::before {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.nav__ref {
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1;
+}
