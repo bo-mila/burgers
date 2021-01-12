@@ -10,18 +10,18 @@
   align-items: center;
 }
 .first__img {
-  margin-right: 10px;
+  margin-right: rem(10px);
 }
 .first__subtitle {
   @include lifehack();
-  padding-top: 20px;
-  font-size: 65px;
+  padding-top: rem(20px);
+  font-size: rem(65px);
   line-height: 1;
   color: $white;
 }
 .first__scroll {
   position: absolute;
-  bottom: 40px;
+  bottom: rem(40px);
   left: 50%;
   transform: translateX(-50%);
 }

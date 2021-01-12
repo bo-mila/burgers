@@ -12,38 +12,38 @@
   justify-content: center;
 }
 .best__title {
-  margin-bottom: 50px;
+  margin-bottom: rem(50px);
 }
 .best__list {
   display: flex;
   justify-content: space-between;
 }
 .best__item {
-  // margin-right: 35px;
+  // margin-right: rem(35px);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: calc(100%/3 - 28px);
+  width: calc(100%/3 - rem(28px));
 
   &:last-child {
     margin-right: 0;
   }
 }
 .best__icon {
-  width: 97px;
-  height: 89px;
-  margin-bottom: 33px;
+  width: rem(97px);
+  height: rem(89px);
+  margin-bottom: rem(33px);
 }
 .best__subtitle {
   @include lifehack();
-  margin-bottom: 25px;
-  font-size: 24px;
+  margin-bottom: rem(25px);
+  font-size: rem(24px);
   color: $black;
 }
 .best__desc {
   @include ubuntu(light);
   color: rgba($black,.8);
   line-height: 1.71;
-  font-size: 14px;
+  font-size: rem(14px);
 }

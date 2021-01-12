@@ -10,7 +10,7 @@
   width: calc(100%/2 - 20px);
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
+  margin-right: rem(20px);
   
   &:last-child {
     margin-right: 0;
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin-bottom: 19px;
+  margin-bottom: rem(19px);
 
   &:last-child {
     margin-bottom: 0;
@@ -29,7 +29,7 @@
 }
 .form__block {
   flex: 1;
-  margin-right: 10px;
+  margin-right: rem(10px);
   width: 100%;
   color: $white;
 
@@ -39,26 +39,26 @@
 }
 .form__subtitle {
   @include ubuntu(light);
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: rem(14px);
+  margin-bottom: rem(10px);
 }
 .form__input {
   @include ubuntu(light);
-  font-size: 14px;
+  font-size: rem(14px);
   width: 100%;
   background: $white;
   border-radius: 3px;
   // border: 2px solid transparent;
   border: 2px solid $grey;
   outline: none;
-  padding: 6px;
+  padding: rem(6px);
   color: $black;
   &:focus {
     border-color: $yellow;
   }
 }
 .form__input--textarea{
-  height: 90px;
+  height: rem(90px);
   resize: vertical;
   
   border: 2px solid transparent;
@@ -68,7 +68,7 @@
   }
  }
  .form__option {
-   margin-right: 20px;
+   margin-right: rem(20px);
    cursor: pointer;
 
    &:last-child {
@@ -94,16 +94,16 @@
   display: flex;
   color: $white;
   @include ubuntu(light);
-  font-size: 14px;
+  font-size: rem(14px);
   align-items: center;
   position: relative;
 
   &::before {
     content: "";
     flex-shrink: 0;
-    margin-right: 10px;
-    width: 15px;
-    height: 15px;
+    margin-right: rem(10px);
+    width: rem(15px);
+    height: rem(15px);
     background-color: $white;
     border-radius: 50%;
   }
@@ -114,8 +114,8 @@
     display: none;
     left: 3%;
     top: 30%;
-    width: 7px;
-    height: 7px;
+    width: rem(7px);
+    height: rem(7px);
     background-color: $red;
     border-radius: 50%;
   }
@@ -134,17 +134,17 @@
 }
 .check__title {
   @include ubuntu(light);
-  font-size: 14px;
+  font-size: rem(14px);
   display: flex;
   flex-direction: row;
   color: $white;
   &::before {
     content: "";
     flex-shrink: 0;
-    margin-right: 10px;
-    width: 16px;
-    height: 16px;
-    border: 1px solid $white;
+    margin-right: rem(10px);
+    width: rem(16px);
+    height: rem(16px);
+    border: rem(1px) solid $white;
     background-color: $white;
     border-radius: 20%;
     display: flex;

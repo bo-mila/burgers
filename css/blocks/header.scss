@@ -2,7 +2,7 @@
   position: absolute;
   width: 100%;
   z-index: $z-header;
-  top: 20px;
+  top: rem(20px);
 }
 .header__container {
   display: flex;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 .header__logo {
-  margin-right: 50px;
+  margin-right: rem(50px);
 }
 .header__menu {
   flex: 1;
@@ -19,7 +19,7 @@
 }
 .header__nav {
   flex: 1;
-  margin-right: 20px;
+  margin-right: rem(20px);
 }
 .header__btn {
   display: flex;
