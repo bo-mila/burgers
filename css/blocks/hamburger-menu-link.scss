@@ -1,18 +1,17 @@
 .hamburger-menu {
-	display: flex;
+	display: none;
   align-items: center;
+
+	@include tablets {
+		display: flex;
+	}
 }
 .hamburger-menu__link {
 	vertical-align: middle;
 	position: relative;
 	height: rem(22px);
 	align-items: center;
-	margin-left: rem(30px);
-	display: none;
-
-	// @include tablets {
-	// 	display: inline-flex;
-	// }
+	display: inline-flex;
 }
 
 .hamburger-menu__bars {

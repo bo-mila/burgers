@@ -10,17 +10,18 @@
   align-items: center;
 }
 .header__logo {
-  margin-right: rem(50px);
+  margin-right: rem(10px);
 }
 .header__menu {
   flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  text-align: right;
 }
 .header__nav {
   flex: 1;
-  margin-right: rem(20px);
+  justify-content: flex-end;
 }
-.header__btn {
-  display: flex;
+.header__hamburger-menu {
+	margin-left: rem(30px);
 }

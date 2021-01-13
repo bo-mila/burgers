@@ -4,13 +4,32 @@
 .first__container {
   height: 100%;
   display: flex;
+  @include tablets {
+    width: 82%;
+  }
 }
 .first__content {
   display: flex;
   align-items: center;
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 15%;
+    margin: 0 auto;
+  }
 }
 .first__img {
   margin-right: rem(10px);
+  @include tablets {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+.first__title {
+  @include tablets {
+    text-align: center;
+    padding-top: rem(40px);
+  }
 }
 .first__subtitle {
   @include lifehack();
