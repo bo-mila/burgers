@@ -4,6 +4,9 @@
   @include bg-section (bg-menu);
   background-position: top center;
   position: relative;
+  @include tablets {
+    background-position: 40% center;
+  }
 }
 
 .menu__container {
@@ -51,9 +54,9 @@
     width: 49%;
     & .menu__name {
       color: $yellow;
-      @include phones {
-        color: $white;
-      }
+      // @include phones {
+      //   color: $white;
+      // }
     }
     & .menu__desc {
         width: 100%;

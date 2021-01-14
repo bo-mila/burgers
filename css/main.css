@@ -1039,6 +1039,9 @@ table {
   position: relative;
   background-position: top center;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .menu {
+      background-position: 40% center; } }
 
 .menu__container {
   display: -webkit-box;
@@ -1096,9 +1099,6 @@ table {
     width: 49%; }
     .menu__item--active .menu__name {
       color: #f9b43b; }
-      @media screen and (max-width: 480px) {
-        .menu__item--active .menu__name {
-          color: #fff; } }
     .menu__item--active .menu__desc {
       width: 100%;
       padding-left: 1.875rem;
