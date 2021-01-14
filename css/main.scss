@@ -4,9 +4,13 @@ $orange: #e35028;
 $white: #fff;
 $black: #2f3234;
 $grey: #d1cfcb;
+$black-bg: #202020;
 
 $z-fixed-menu: 10;
 $z-header: 1;
+$z-menu__item--active: 5;
+$z-menu-name: 3;
+$z-menu-name-before: -2;
 $z-order: 1;
 
 @import "./_misc/normalize.scss";
@@ -26,6 +30,7 @@ $z-order: 1;
 @import "./blocks/scroll.scss";
 @import "./blocks/best.scss";
 @import "./blocks/team.scss";
+@import "./blocks/menu.scss";
 @import "./blocks/reviews.scss";
 @import "./blocks/order.scss";
 @import "./blocks/form.scss";

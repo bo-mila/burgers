@@ -617,7 +617,8 @@ table {
 .fixed-menu {
   position: fixed;
   top: 5.625rem;
-  right: 1.875rem; }
+  right: 0.75rem;
+  z-index: 10; }
   @media screen and (max-width: 768px) {
     .fixed-menu {
       display: none; } }
@@ -1027,6 +1028,163 @@ table {
   @media screen and (max-width: 768px) {
     .team__text {
       text-align: center; } }
+
+.menu {
+  height: 100vh;
+  min-height: 100%;
+  background-image: url("../../img/bg/bg-menu.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  background-position: top center;
+  position: relative; }
+
+.menu__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%; }
+
+.menu__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.menu__title {
+  position: absolute;
+  top: 15%;
+  left: 6%;
+  color: #fff; }
+
+.menu__acc {
+  position: absolute;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  right: 0; }
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+.menu__item {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  .menu__item--active {
+    width: 49%; }
+    .menu__item--active .menu__name {
+      color: #f9b43b; }
+      @media screen and (max-width: 480px) {
+        .menu__item--active .menu__name {
+          color: #fff; } }
+    .menu__item--active .menu__desc {
+      width: 100%;
+      padding-left: 1.875rem;
+      padding-right: 2.0625rem; }
+    @media screen and (max-width: 768px) {
+      .menu__item--active {
+        height: 100vh;
+        width: 100%; } }
+
+.menu__name {
+  font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+  line-height: 2;
+  text-align: center;
+  font-size: 2.1875rem;
+  text-transform: uppercase;
+  color: #fff;
+  background-size: cover;
+  position: relative;
+  width: 5rem;
+  z-index: 3;
+  /* &::before {
+    display: block;
+    content: ' ';
+    background-image: url('../img/icons/down.svg');
+    background-size: rem(28px) rem(28px);
+    height: rem(28px);
+    width: rem(28px);
+  }*/ }
+  .menu__name div {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: rotate(-90deg) translateX(-50%);
+    -ms-transform: rotate(-90deg) translateX(-50%);
+    transform: rotate(-90deg) translateX(-50%);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    white-space: nowrap; }
+  .menu__name:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(32, 32, 32, 0.7);
+    z-index: -2; }
+  .menu__name--meat {
+    background-image: url("../img/bg/bg-acc-menu-meat.png");
+    background-position: center; }
+  .menu__name--vegan {
+    background-image: url("../img/bg/bg-acc-menu-veget.png");
+    background-position-x: 90%; }
+  .menu__name--diet {
+    background-image: url("../img/bg/bg-acc-menu-diet.png");
+    background-position: right; }
+
+.menu__desc {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.71;
+  background-color: rgba(32, 32, 32, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 0;
+  padding-top: 4.1875rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden; }
+  @media screen and (max-width: 768px) {
+    .menu__desc {
+      font-size: 0.75rem;
+      line-height: 1.6; } }
+
+.menu__desc-close {
+  display: none;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-bottom: 8%; }
 
 @media screen and (max-width: 768px) {
   .reviews {
