@@ -407,6 +407,9 @@ html, body {
   @media screen and (max-width: 768px) {
     .container {
       width: 95%; } }
+  @media screen and (max-width: 480px) {
+    .container {
+      width: 90%; } }
 
 .section {
   height: 100vh;
@@ -679,6 +682,9 @@ table {
   @media screen and (max-width: 768px) {
     .first__container {
       width: 82%; } }
+  @media screen and (max-width: 480px) {
+    .first__container {
+      width: 97%; } }
 
 .first__content {
   display: -webkit-box;
@@ -715,6 +721,9 @@ table {
   @media screen and (max-width: 768px) {
     .first__title {
       text-align: center; } }
+  @media screen and (max-width: 480px) {
+    .first__title {
+      font-size: 3.9375rem; } }
 
 .first__subtitle {
   font-family: 'Lifehack-Medium';
@@ -722,6 +731,9 @@ table {
   font-size: 4.0625rem;
   line-height: 1;
   color: #fff; }
+  @media screen and (max-width: 480px) {
+    .first__subtitle {
+      font-size: 3.375rem; } }
 
 .first__scroll {
   position: absolute;

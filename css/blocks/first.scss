@@ -7,6 +7,9 @@
   @include tablets {
     width: 82%;
   }
+  @include phones {
+    width: 97%;
+  }
 }
 .first__content {
   display: flex;
@@ -35,6 +38,9 @@
   @include tablets {
     text-align: center;
   }
+  @include phones {
+    font-size: rem(63px);
+  }
 }
 .first__subtitle {
   @include lifehack();
@@ -42,6 +48,9 @@
   font-size: rem(65px);
   line-height: 1;
   color: $white;
+  @include phones {
+    font-size: rem(54px);
+  }
 }
 .first__scroll {
   position: absolute;

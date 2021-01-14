@@ -58,6 +58,9 @@ html, body {
   @include tablets {
     width: 95%;
   }
+  @include phones {
+    width: 90%;
+  }
 }
 .section {
   height: 100vh;
