@@ -11,18 +11,11 @@
   }
 }
 .form__col {
-  width: calc(100%/2 - 20px);
+  width: calc(100%/2 - 1%);
   display: flex;
   flex-direction: column;
-  margin-right: rem(20px);
-  
-  &:last-child {
-    margin-right: 0;
-    
-  }
   @include tablets {
     width: 100%;
-    margin-right: 0;
     margin-bottom: rem(19px);
     &:last-child {
       margin-bottom: 0;
