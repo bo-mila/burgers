@@ -19,16 +19,21 @@
   }
 }
 .first__img {
-  margin-right: rem(10px);
+  margin-right: rem(8px);
+  width: 70%;
   @include tablets {
     margin-right: 0;
-    max-width: 100%;
+    width: 75%;
   }
 }
+.first__pic {
+  max-width: 100%;
+}
 .first__title {
+  padding-top: rem(40px);
+
   @include tablets {
     text-align: center;
-    padding-top: rem(40px);
   }
 }
 .first__subtitle {

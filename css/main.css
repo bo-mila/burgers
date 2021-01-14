@@ -650,16 +650,21 @@ table {
       margin: 0 auto; } }
 
 .first__img {
-  margin-right: 0.625rem; }
+  margin-right: 0.5rem;
+  width: 70%; }
   @media screen and (max-width: 768px) {
     .first__img {
       margin-right: 0;
-      max-width: 100%; } }
+      width: 75%; } }
 
-@media screen and (max-width: 768px) {
-  .first__title {
-    text-align: center;
-    padding-top: 2.5rem; } }
+.first__pic {
+  max-width: 100%; }
+
+.first__title {
+  padding-top: 2.5rem; }
+  @media screen and (max-width: 768px) {
+    .first__title {
+      text-align: center; } }
 
 .first__subtitle {
   font-family: 'Lifehack-Medium';
@@ -745,9 +750,10 @@ table {
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  width: calc(100%/3 - rem(28px)); }
-  .best__item:last-child {
-    margin-right: 0; }
+  width: calc(100%/3 - 3%); }
+  @media screen and (max-width: 768px) {
+    .best__item {
+      width: calc(100%/3 - 1%); } }
 
 .best__icon {
   width: 6.0625rem;
