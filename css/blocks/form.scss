@@ -1,10 +1,14 @@
 .form {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
+  @include tablets {
+    width: 70%;
+    flex-direction: column;
+  }
 }
 .form__col {
   width: calc(100%/2 - 20px);
@@ -14,6 +18,15 @@
   
   &:last-child {
     margin-right: 0;
+    
+  }
+  @include tablets {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: rem(19px);
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 .form__row {
@@ -32,7 +45,9 @@
   margin-right: rem(10px);
   width: 100%;
   color: $white;
-
+  @include tablets {
+  margin-right: rem(15px);
+  }
   &:last-child {
     margin-right: 0;
   }
