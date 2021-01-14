@@ -750,7 +750,7 @@ table {
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  width: calc(100%/3 - 3%); }
+  width: calc(100%/3 - 2%); }
   @media screen and (max-width: 768px) {
     .best__item {
       width: calc(100%/3 - 1%); } }
@@ -773,6 +773,10 @@ table {
   line-height: 1.71;
   font-size: 0.875rem; }
 
+@media screen and (max-width: 768px) {
+  .reviews {
+    height: 130vh; } }
+
 .reviews__list {
   height: 100%;
   display: -webkit-box;
@@ -790,6 +794,11 @@ table {
   filter: grayscale(100%); }
   .reviews__item:hover .reviews__hover {
     opacity: 1; }
+  @media screen and (max-width: 768px) {
+    .reviews__item {
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+      height: 25%; } }
 
 .reviews__img {
   height: 100%;
@@ -812,20 +821,33 @@ table {
   -o-transition: opacity .8s;
   transition: opacity .8s;
   font-size: 0.875rem;
-  padding-left: 1.25rem;
-  padding-right: 2.0625rem;
-  padding-top: 3.125rem; }
+  padding-left: 9%;
+  padding-right: 11%;
+  padding-top: 13%; }
+  @media screen and (max-width: 768px) {
+    .reviews__hover {
+      text-align: center;
+      padding-top: 7%;
+      padding-left: 10%;
+      padding-right: 10%; } }
 
 .reviews__name {
   font-family: 'Gagalin-Regular', Helvetica, sans-serif;
   text-transform: uppercase;
   margin-bottom: 1.25rem; }
+  @media screen and (max-width: 768px) {
+    .reviews__name {
+      margin-bottom: 0.625rem; } }
 
 .reviews__text {
   font-family: 'Ubuntu', Helvetica, sans-serif;
   font-weight: 300;
   margin-bottom: 1.25rem;
   line-height: 1.71; }
+  @media screen and (max-width: 768px) {
+    .reviews__text {
+      line-height: 1.6;
+      margin-bottom: 0.5rem; } }
 
 .order {
   background-image: url("../../img/bg/bg-order.png");

@@ -24,7 +24,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: calc(100%/3 - 3%);
+  width: calc(100%/3 - 2%);
 
   @include tablets {
     width: calc(100%/3 - 1%);
