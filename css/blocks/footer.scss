@@ -1,0 +1,30 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $black;
+  padding-top: rem(12px);
+  padding-bottom: rem(12px);
+  color: $white;
+}
+.footer__container {
+  display: flex;
+  align-items: center;
+}
+.footer__left, .footer__right {
+  width: 50%;
+  font-size: rem(14px);
+}
+.footer__address {
+  @include ubuntu(light);
+  margin-bottom: rem(6px);
+}
+
+.footer__phone {
+  color: $red;
+  @include ubuntu(bold);
+}
+.footer__right {
+  justify-content: flex-end;
+}
