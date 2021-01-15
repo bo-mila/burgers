@@ -938,6 +938,9 @@ table {
     .team__content {
       max-width: 85%;
       padding: 14% 0% 10% 0; } }
+  @media screen and (max-width: 480px) {
+    .team__content {
+      padding-top: 24%; } }
 
 .team__title {
   margin-bottom: 2.875rem;
