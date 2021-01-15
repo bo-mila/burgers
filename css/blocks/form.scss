@@ -9,6 +9,9 @@
     width: 70%;
     flex-direction: column;
   }
+  @include phones {
+    width: 100%;
+  }
 }
 .form__col {
   width: calc(100%/2 - 1%);
@@ -27,7 +30,9 @@
   flex-direction: row;
   flex-wrap: nowrap;
   margin-bottom: rem(19px);
-
+  @include phones {
+    justify-content: center;
+  }
   &:last-child {
     margin-bottom: 0;
   }
@@ -41,8 +46,21 @@
   @include tablets {
   margin-right: rem(15px);
   }
+  @include phones {
+    margin-right: rem(10px);
+  }
   &:last-child {
     margin-right: 0;
+  }
+  &--mr0-in-phones {
+    @include phones {
+      margin-right: 0;
+    }
+  }
+  &--no-in-phones {
+    @include phones {
+      display: none;
+    }
   }
 }
 .form__subtitle {
