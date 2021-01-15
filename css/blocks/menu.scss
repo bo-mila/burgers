@@ -24,17 +24,15 @@
   position: absolute;
   top: 15%;
   left: 6%;
-  color: $white;
-  // @include phones {
-  //   font-size: rem(50px);
-  //   left: 5%;
-  //   top: 10%;
-  //   color: $white;
-  // }
+  @include phones {
+    font-size: rem(50px);
+    left: 5%;
+    top: 10%;
+  }
   }
 .menu__acc {
   position: absolute;
-  z-index: 1;
+  z-index: $z-menu-acc;
   display: flex;
   height: 100%;
   right: 0;
@@ -58,6 +56,7 @@
       //   color: $white;
       // }
     }
+
     & .menu__desc {
         width: 100%;
         padding-left: rem(30px);
@@ -67,15 +66,15 @@
       height: 100vh;
       width: 100%;
     }
-    // @include phones {
-    //   position: absolute;
-    //   height: 100vh;
-    //   width: 100vw;
-    //   & .menu__desc {
-    //     padding-top: 10%;
-    //   }
-    //   z-index: $z-menu__item--active;
-    // }
+    @include phones {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      z-index: $z-menu__item--active;
+      & .menu__desc {
+        padding-top: 15%;
+      }
+    }
   }
 }
 .menu__name {
@@ -89,21 +88,23 @@
   position: relative;
   width: rem(80px);
   z-index: $z-menu-name;
-  //  @include phones {
-  //    width: rem(70px);
-  //    font-size: rem(35px);
-  //  }
+   @include phones {
+     width: rem(70px);
+     font-size: rem(35px);
+   }
   & div {
     position: absolute;
-    top: 50%;
-    transform: rotate(-90deg) translateX(-50%);
+    bottom: 0;
+    // top: 50%;
+    // transform: rotate(-90deg) translateX(-50%);
+    transform: rotate(-90deg);
     transform-origin: 0 0;
     white-space: nowrap;
-    // @include phones {
+    @include phones {
     //  top: 90%;
-    // transform: rotate(-90deg) translateX(0%);
+    transform: rotate(-90deg) translateX(0%);
     // transform-origin: 0 0;
-    // }
+    }
   }
   &:before {
     content: '';
