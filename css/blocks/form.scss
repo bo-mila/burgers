@@ -158,3 +158,11 @@
     display: flex;
   }
 }
+.form__btn {
+  margin-right: rem(10px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+}

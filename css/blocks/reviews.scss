@@ -51,6 +51,10 @@
     padding-left: 10%;
     padding-right: 10%;
   }
+  @include phones {
+    padding: 5%;
+    padding-top: 25%
+  }
 }
 .reviews__name {
   @include gagalin();
@@ -59,6 +63,10 @@
 
   @include tablets {
     margin-bottom: rem(10px);
+  }
+  @include phones {
+    font-size: rem(24px);
+    margin-bottom: rem(20px);
   }
 }
 .reviews__text {
@@ -69,5 +77,21 @@
   @include tablets {
     line-height: 1.6;
     margin-bottom: rem(8px);
+  }
+  @include phones {
+    display: none;
+  }
+}
+.reviews__btn {
+  
+  &--phones {
+    display: none;
+    margin: 0 auto;
+    @include phones {
+      display: block;
+    }
+  }
+  @include phones {
+    display: none;
   }
 }

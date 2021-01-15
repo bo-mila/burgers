@@ -569,10 +569,7 @@ table {
   line-height: 1;
   font-family: 'Ubuntu', Helvetica, sans-serif;
   font-weight: 500;
-  font-size: 0.8125rem;
-  margin-right: 0.625rem; }
-  .btn:last-child {
-    margin-right: 0; }
+  font-size: 0.8125rem; }
   .btn--black {
     background-color: #2f3234; }
   .btn--transp {
@@ -1334,6 +1331,10 @@ table {
       padding-top: 7%;
       padding-left: 10%;
       padding-right: 10%; } }
+  @media screen and (max-width: 480px) {
+    .reviews__hover {
+      padding: 5%;
+      padding-top: 25%; } }
 
 .reviews__name {
   font-family: 'Gagalin-Regular', Helvetica, sans-serif;
@@ -1342,6 +1343,10 @@ table {
   @media screen and (max-width: 768px) {
     .reviews__name {
       margin-bottom: 0.625rem; } }
+  @media screen and (max-width: 480px) {
+    .reviews__name {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem; } }
 
 .reviews__text {
   font-family: 'Ubuntu', Helvetica, sans-serif;
@@ -1352,6 +1357,20 @@ table {
     .reviews__text {
       line-height: 1.6;
       margin-bottom: 0.5rem; } }
+  @media screen and (max-width: 480px) {
+    .reviews__text {
+      display: none; } }
+
+.reviews__btn--phones {
+  display: none;
+  margin: 0 auto; }
+  @media screen and (max-width: 480px) {
+    .reviews__btn--phones {
+      display: block; } }
+
+@media screen and (max-width: 480px) {
+  .reviews__btn {
+    display: none; } }
 
 .order {
   background-image: url("../../img/bg/bg-order.png");
@@ -1573,3 +1592,8 @@ table {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+
+.form__btn {
+  margin-right: 0.625rem; }
+  .form__btn:last-child {
+    margin-right: 0; }
