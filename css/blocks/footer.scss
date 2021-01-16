@@ -11,10 +11,23 @@
 .footer__container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  @include phones {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
-.footer__left, .footer__right {
-  width: 50%;
+.footer__left {
+  flex: 1;
   font-size: rem(14px);
+  @include phones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: rem(15px);
+    flex-direction: column;
+    text-align: center;
+  }
 }
 .footer__address {
   @include ubuntu(light);
@@ -24,9 +37,18 @@
 .footer__phone {
   color: $red;
   @include ubuntu(bold);
+  @include phones {
+    display: flex;
+    justify-content: center;
+  }
 }
 .footer__right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 30%;
+  @include phones {
+    width: 100%;
+    justify-content: center;
+  }
 }
