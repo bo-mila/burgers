@@ -22,10 +22,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 27% 4% 10% 15%;
+  padding: 20% 4% 5% 15%;
   @include tablets {
     max-width: 85%;
-    padding: 14% 0% 10% 0;
+    padding: 10% 0% 2% 0;
 
   }
   @include phones {

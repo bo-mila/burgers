@@ -947,11 +947,11 @@ table {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 27% 4% 10% 15%; }
+  padding: 20% 4% 5% 15%; }
   @media screen and (max-width: 768px) {
     .team__content {
       max-width: 85%;
-      padding: 14% 0% 10% 0; } }
+      padding: 10% 0% 2% 0; } }
   @media screen and (max-width: 480px) {
     .team__content {
       padding-top: 24%; } }
