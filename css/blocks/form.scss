@@ -146,6 +146,9 @@
     border-radius: 50%;
   }
 }
+.check {
+  position: relative;
+}
 .check__checkbox {
   display: none;
 
@@ -155,6 +158,9 @@
       &::before {
         border-color: $yellow;
       }
+    }
+    & ~ .checkbox-svg {
+      display: block;
     }
   }
 }
@@ -175,6 +181,15 @@
     border-radius: 20%;
     display: flex;
   }
+}
+.checkbox-svg {
+  display: none;
+  position: absolute;
+  top: -30%;
+  left: -4%;
+  fill: $red;
+  width: rem(28px);
+  height: rem(28px);
 }
 .form__btn {
   margin-right: rem(10px);

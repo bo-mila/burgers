@@ -499,6 +499,10 @@ table {
 .header__hamburger-menu {
   margin-left: 1.875rem; }
 
+.logo__icon {
+  width: 5.75rem;
+  height: 4.3125rem; }
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -735,7 +739,7 @@ table {
     .first__subtitle {
       font-size: 3.375rem; } }
 
-.first__scroll {
+.first__arrow-down {
   position: absolute;
   bottom: 2.5rem;
   left: 50%;
@@ -754,13 +758,11 @@ table {
   .title--color--white {
     color: #fff; }
 
-.scroll__down {
+.arrow-down__icon {
   display: block;
   width: 1.8125rem;
   height: 0.875rem;
-  background-image: url("../../img/icons/arrow-scroll.svg");
-  background-repeat: no-repeat;
-  background-size: contain; }
+  fill: #fff; }
 
 .best {
   background-image: url("../../img/bg/bg-we.png");
@@ -890,6 +892,18 @@ table {
   color: rgba(47, 50, 52, 0.8);
   line-height: 1.71;
   font-size: 0.875rem; }
+
+.meat__icon {
+  width: 6.0625rem;
+  height: 5.5625rem; }
+
+.hend__icon {
+  width: 4.5625rem;
+  height: 5.3125rem; }
+
+.leaf__icon {
+  width: 5.5rem;
+  height: 4.6875rem; }
 
 .team {
   background-image: url("../../img/bg/bg-team.png");
@@ -1584,12 +1598,17 @@ table {
     background-color: #e45028;
     border-radius: 50%; }
 
+.check {
+  position: relative; }
+
 .check__checkbox {
   display: none; }
   .check__checkbox:checked ~ .check__title {
     color: #e45028; }
     .check__checkbox:checked ~ .check__title::before {
       border-color: #f9b43b; }
+  .check__checkbox:checked ~ .checkbox-svg {
+    display: block; }
 
 .check__title {
   font-family: 'Ubuntu', Helvetica, sans-serif;
@@ -1616,6 +1635,15 @@ table {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+
+.checkbox-svg {
+  display: none;
+  position: absolute;
+  top: -30%;
+  left: -4%;
+  fill: #e45028;
+  width: 1.75rem;
+  height: 1.75rem; }
 
 .form__btn {
   margin-right: 0.625rem; }
@@ -1663,6 +1691,65 @@ table {
   font-weight: bold; }
 
 .footer__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.phone__icon {
+  fill: #e45028;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.625rem; }
+
+.network {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.network__item {
+  margin-right: 1.25rem;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+  opacity: .3; }
+  .network__item:last-child {
+    margin-right: 0; }
+  .network__item:hover {
+    opacity: 1; }
+
+.vk__icon {
+  width: 1.4375rem;
+  height: 0.8125rem;
+  fill: #fff; }
+
+.fb__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: #fff; }
+
+.inst__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: #fff; }
+
+.tw__icon {
+  width: 1.25rem;
+  height: 1rem;
+  fill: #fff; }
