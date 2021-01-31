@@ -842,7 +842,7 @@ table {
       -ms-flex-align: start;
       align-items: flex-start;
       width: 100%;
-      margin-bottom: 2.8125rem; } }
+      margin-bottom: 2.1875rem; } }
   @media screen and (max-width: 480px) {
     .best__item:last-child {
       margin-bottom: 0; } }
@@ -947,7 +947,7 @@ table {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 20% 4% 5% 15%; }
+  padding: 20% 7% 5% 15%; }
   @media screen and (max-width: 768px) {
     .team__content {
       max-width: 85%;
@@ -1017,7 +1017,8 @@ table {
   align-items: center;
   position: relative;
   padding-left: 1.1875rem;
-  margin-bottom: 1.0625rem; }
+  margin-bottom: 1.0625rem;
+  cursor: pointer; }
   .team__name::before {
     content: ' ';
     width: 0;
@@ -1311,6 +1312,9 @@ table {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%); }
   .reviews__item:hover .reviews__hover {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1; }
   @media screen and (max-width: 768px) {
     .reviews__item {
@@ -1327,21 +1331,23 @@ table {
   object-position: center; }
 
 .reviews__hover {
-  opacity: 0;
-  color: #fff;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(47, 50, 52, 0.3);
-  -webkit-transition: opacity .8s;
-  -o-transition: opacity .8s;
-  transition: opacity .8s;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%) scale(0.7);
+  -ms-transform: translate(-50%, -50%) scale(0.7);
+  transform: translate(-50%, -50%) scale(0.7);
+  opacity: 0;
+  padding: 17% 12% 0;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  z-index: 10;
+  background-color: rgba(47, 50, 52, 0.5);
   font-size: 0.875rem;
-  padding-left: 9%;
-  padding-right: 11%;
-  padding-top: 13%; }
+  color: #fff; }
   @media screen and (max-width: 768px) {
     .reviews__hover {
       text-align: center;
@@ -1439,6 +1445,7 @@ table {
       margin-bottom: 2.1875rem; } }
 
 .form {
+  margin: 0 auto;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
