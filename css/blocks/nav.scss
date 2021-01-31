@@ -2,28 +2,34 @@
   display: flex;
 }
 .nav__list {
+  @include ubuntu(medium);
+  font-size: rem(13px);
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  @include ubuntu(medium);
-  font-size: 13px;
+  flex: 1;
+  margin-right: rem(8px);
+  @include tablets {
+    display: none;
+  } 
 }
 .nav__item {
-  margin-right: 15px;
   display: flex;
   align-items: center;
   color: $white;
   cursor: pointer;
-
+  text-align: center;
+  margin-right: rem(8px);
   &::before {
     content: "";
-    width: 4px;
-    height: 4px;
+    width: rem(4px);
+    height: rem(4px);
     background-color: currentColor;
     border-radius: 50%;
     display: block;
-    margin-right: 15px;
+    margin-right: rem(10px);
+
   }
 
   &:first-child {
@@ -40,4 +46,7 @@
   text-decoration: none;
   text-transform: uppercase;
   line-height: 1;
+}
+.nav__btn {
+  display: flex;
 }

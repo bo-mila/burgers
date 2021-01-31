@@ -12,38 +12,76 @@
   justify-content: center;
 }
 .best__title {
-  margin-bottom: 50px;
+  margin-bottom: rem(50px);
+  @include phones {
+    font-size: rem(50px);
+    margin-bottom: rem(38px);
+  }
 }
 .best__list {
   display: flex;
   justify-content: space-between;
+  @include phones {
+    flex-direction: column;
+    justify-content: flex-start;
+    // align-items: center;
+  }
 }
 .best__item {
-  // margin-right: 35px;
+  // margin-right: rem(35px);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: calc(100%/3 - 28px);
+  width: calc(100%/3 - 2%);
 
+  @include tablets {
+    width: calc(100%/3 - 1%);
+  }
+  @include phones {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: rem(35px);
+  }
   &:last-child {
-    margin-right: 0;
+    @include phones {
+      margin-bottom: 0;
+    }
   }
 }
 .best__icon {
-  width: 97px;
-  height: 89px;
-  margin-bottom: 33px;
+  width: rem(97px);
+  height: rem(89px);
+  margin-bottom: rem(33px);
+  @include phones {
+    margin-bottom: 0;
+    margin-right: rem(28px);
+  }
+}
+.best__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include phones {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 .best__subtitle {
   @include lifehack();
-  margin-bottom: 25px;
-  font-size: 24px;
+  margin-bottom: rem(25px);
+  font-size: rem(24px);
   color: $black;
+  @include phones {
+    margin-bottom: rem(22px);
+
+  }
 }
-.best__desc {
+.best__info {
   @include ubuntu(light);
   color: rgba($black,.8);
   line-height: 1.71;
-  font-size: 14px;
+  font-size: rem(14px);
 }

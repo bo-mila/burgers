@@ -24,5 +24,9 @@
   width: 100%;
 }
 .order__title {
-  margin-bottom: 44px;
+  margin-bottom: rem(44px);
+  @include phones {
+    font-size: rem(50px);
+    margin-bottom: rem(35px);
+  }
 }

@@ -1,0 +1,179 @@
+.menu {
+  height: 100vh;
+  min-height: 100%;
+  @include bg-section (bg-menu);
+  background-position: top center;
+  position: relative;
+  @include tablets {
+    background-position: 40% center;
+  }
+}
+
+.menu__container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+ 
+}
+
+.menu__content {
+  display: flex;
+}
+
+.menu__title {
+  position: absolute;
+  top: 15%;
+  left: 6%;
+  @include phones {
+    font-size: rem(50px);
+    left: 5%;
+    top: 10%;
+  }
+  }
+.menu__acc {
+  position: absolute;
+  z-index: $z-menu-acc;
+  display: flex;
+  height: 100%;
+  right: 0;
+}
+.menu__list {
+  display:flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: flex-end;
+}
+.menu__item {
+  color: $white;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  &--active {
+    width: 49%;
+    & .menu__name {
+      color: $yellow;
+      // @include phones {
+      //   color: $white;
+      // }
+    }
+
+    & .menu__desc {
+        width: 100%;
+        padding-left: rem(30px);
+        padding-right: rem(33px);
+    }
+    @include tablets {
+      height: 100vh;
+      width: 100%;
+    }
+    @include phones {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      z-index: $z-menu__item--active;
+      & .menu__desc {
+        padding-top: 15%;
+      }
+    }
+  }
+}
+.menu__name {
+  @include gagalin();
+  line-height: 2;
+  text-align: center;
+  font-size: rem(35px);
+  text-transform: uppercase;
+  color: $white;
+  background-size: cover;
+  position: relative;
+  width: rem(80px);
+  z-index: $z-menu-name;
+   @include phones {
+     width: rem(70px);
+     font-size: rem(35px);
+   }
+  & div {
+    position: absolute;
+    bottom: 0;
+    // top: 50%;
+    // transform: rotate(-90deg) translateX(-50%);
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    white-space: nowrap;
+    @include phones {
+    //  top: 90%;
+    transform: rotate(-90deg) translateX(0%);
+    // transform-origin: 0 0;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color: $black-bg, $alpha: .7);
+    z-index: $z-menu-name-before;
+  }
+
+  &--meat {
+
+    background-image:  url("../img/bg/bg-acc-menu-meat.png");
+    background-position: center;
+    
+  }
+
+  &--vegan {
+    background-image: url("../img/bg/bg-acc-menu-veget.png");
+    background-position-x:  90%;
+  
+    
+  }
+
+  &--diet {
+    background-image: url("../img/bg/bg-acc-menu-diet.png");
+    background-position: right;
+    
+  }
+
+/* &::before {
+    display: block;
+    content: ' ';
+    background-image: url('../img/icons/down.svg');
+    background-size: rem(28px) rem(28px);
+    height: rem(28px);
+    width: rem(28px);
+  }*/
+  
+
+}
+
+.menu__desc {
+  @include ubuntu(light);
+  font-size: rem(14px);
+  line-height: 1.71;
+  background-color: rgba($color: $black-bg, $alpha: .9);
+  display: flex;
+  flex-direction: column;
+  width: 0;
+  padding-top: rem(67px);
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @include tablets {
+    font-size: rem(12px);
+    line-height: 1.6;
+    
+  }
+ 
+}
+
+.menu__desc-close {
+  display: none;
+  justify-content: flex-end;
+  margin-bottom: 8%;
+  // @include phones {
+  //   display: flex;
+  // }
+}
