@@ -18,6 +18,17 @@
       & .contain__desc {
         font-size: rem(14px);
       }
+      @include tablets {
+        width: 50vw;
+       }
+       @include phones {
+         width: 62vw;
+          flex-direction: row;
+          justify-content: space-between;;
+          & .contain__list {
+            width: 80%;
+          }
+        }
     }
   }
 }

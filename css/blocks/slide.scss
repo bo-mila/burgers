@@ -4,20 +4,37 @@
   width: 100%;
   position: relative;
   height: 100%;
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 .slide__contain {
   position: absolute;
   left: 0;
   top: -5%;
+  @include tablets {
+    top: 0;
+  }
 }
 .slide__kkal {
   position: absolute;
   left: 0;
   bottom: 0;
+  @include tablets {
+    bottom: inherit;
+    left: inherit;
+    top: 0;
+    right: 0;
+  }
 }
 .slide__img {
   width: 50%;
   flex-shrink: 1;
+  @include tablets {
+    width: 75%;
+    margin-bottom: rem(15px);
+  }
 }
 .slide__pic {
   height: 100%;
@@ -29,23 +46,40 @@
   flex: 1;
   flex-shrink: 0;
   color: $white;
+  @include tablets {
+    text-align: center;
+    width: 85%;
+  }
 }
 .slide__info {
   text-align: left;
   margin-bottom: rem(26px);
+  @include tablets {
+    margin-bottom: rem(20px);
+  }
 }
 .slide__title {
   text-align: left;
   margin-bottom: rem(46px);
+  @include tablets {
+    text-align: center;
+    margin-bottom: rem(26px);
+  }
 }
 .slide__text {
   @include ubuntu(light);
   font-size: rem(14px);
   line-height: 1.71;
+  @include tablets {
+    text-align: center;
+  }
 }
 .slide__order {
   display: flex;
   align-items: baseline;
+  @include tablets {
+    justify-content: center;
+  }
 }
 .slide__price {
   margin-right: rem(28px);
