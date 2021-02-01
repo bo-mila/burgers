@@ -1,0 +1,99 @@
+.contain {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: $z-contain;
+  &:hover {
+    & .contain__img {
+      background-color: rgba($orange, 1);
+    }
+    & .contain__info {
+      width: 25vw;
+      height: auto;
+      opacity: 1;
+      & .contain__icon {
+        width: rem(48px);
+        height: rem(39px);
+      }
+      & .contain__desc {
+        font-size: rem(14px);
+      }
+    }
+  }
+}
+.contain__img {
+  width: rem(90px);
+  height: rem(90px);
+  background-color: rgba($orange, .4);
+  border-radius: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: .6s;
+}
+.contain__title {
+  @include gagalin();
+  font-size: rem(14px);
+  color: $white;
+  text-transform: uppercase;
+  margin-top: rem(5px);
+}
+.contain__info {
+  transition: opacity 1.2s, width .7s, height .7s;
+  opacity: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba($color: $white, $alpha: .9);
+  border-radius: rem(5px);
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.contain__list {
+  display: flex;
+  flex-direction: column;
+  padding: 6%;
+}
+.contain__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 3%;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include tablets {
+    margin-bottom: 0;
+  }
+}
+.contain__icon {
+  width: 0;
+  height: 0;
+  margin-right: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+}
+
+.contain__desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  font-size: 0;
+  transition: .5s;
+}
+.contain__name, .contain__weight {
+  @include ubuntu(medium);
+  line-height: 1.71;
+  color: $black;
+}
+.contain__close {
+  display: none;
+}

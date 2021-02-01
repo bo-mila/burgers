@@ -1,0 +1,61 @@
+.slide {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.slide__contain {
+  position: absolute;
+  left: 0;
+  top: -5%;
+}
+.slide__kkal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.slide__img {
+  width: 50%;
+  flex-shrink: 1;
+}
+.slide__pic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.slide__desc {
+  flex: 1;
+  flex-shrink: 0;
+  color: $white;
+}
+.slide__info {
+  text-align: left;
+  margin-bottom: rem(26px);
+}
+.slide__title {
+  text-align: left;
+  margin-bottom: rem(46px);
+}
+.slide__text {
+  @include ubuntu(light);
+  font-size: rem(14px);
+  line-height: 1.71;
+}
+.slide__order {
+  display: flex;
+  align-items: baseline;
+}
+.slide__price {
+  margin-right: rem(28px);
+  @include gagalin;
+  font-size: rem(32px);
+  color: $orange;
+  display: flex;
+  align-items: baseline;
+}
+.slide__numbers {
+  font-size: rem(72px);
+  margin-right: rem(5px);
+}
