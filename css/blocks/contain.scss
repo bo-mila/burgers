@@ -9,6 +9,7 @@
     }
     & .contain__info {
       width: 25vw;
+      max-width: rem(320px);
       height: auto;
       opacity: 1;
       & .contain__icon {
@@ -18,15 +19,22 @@
       & .contain__desc {
         font-size: rem(14px);
       }
+      & .contain__close {
+        width: rem(20px);
+        height: rem(20px);
+      }
       @include tablets {
         width: 50vw;
+        & .contain__list {
+          width: 86%;
+        }
        }
        @include phones {
          width: 62vw;
           flex-direction: row;
           justify-content: space-between;;
           & .contain__list {
-            width: 80%;
+            width: 83%;
           }
         }
     }
@@ -69,6 +77,12 @@
   display: flex;
   flex-direction: column;
   padding: 6%;
+  // @include tablets {
+  //   padding: 6% 20% 6% 6%;
+  // }
+  @include phones {
+    padding: 6% 3%;
+  }
 }
 .contain__item {
   display: flex;
@@ -106,5 +120,14 @@
   color: $black;
 }
 .contain__close {
+  width: 0;
+  height: 0;
   display: none;
+  fill: rgba($red, .7);
+  position: absolute;
+  top: 8%;
+  right: 6%;
+  @include tablets {
+    display: flex;
+  }
 }
