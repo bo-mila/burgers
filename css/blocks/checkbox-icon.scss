@@ -1,0 +1,11 @@
+.checkbox-icon {
+  display: none;
+  position: absolute;
+  // top: -30%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2%;
+  fill: $red;
+  width: rem(12px);
+  height: rem(12px);
+}

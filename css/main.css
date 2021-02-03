@@ -2192,6 +2192,11 @@ table {
     background-color: #e45028;
     border-radius: 50%; }
 
+.form__btn {
+  margin-right: 0.625rem; }
+  .form__btn:last-child {
+    margin-right: 0; }
+
 .check {
   position: relative; }
 
@@ -2201,7 +2206,7 @@ table {
     color: #e45028; }
     .check__checkbox:checked ~ .check__title::before {
       border-color: #f9b43b; }
-  .check__checkbox:checked ~ .checkbox-svg {
+  .check__checkbox:checked ~ .checkbox-icon {
     display: block; }
 
 .check__title {
@@ -2230,19 +2235,17 @@ table {
     display: -ms-flexbox;
     display: flex; }
 
-.checkbox-svg {
+.checkbox-icon {
   display: none;
   position: absolute;
-  top: -30%;
-  left: -4%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 2%;
   fill: #e45028;
-  width: 1.75rem;
-  height: 1.75rem; }
-
-.form__btn {
-  margin-right: 0.625rem; }
-  .form__btn:last-child {
-    margin-right: 0; }
+  width: 0.75rem;
+  height: 0.75rem; }
 
 .contacts {
   background-image: url("../../img/bg/bg-contacts.png");
