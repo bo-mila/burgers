@@ -1,3 +1,4 @@
+
 const hamburgerMenuInput = document.querySelector('.hamburger-menu__input');
 const hamburger = document.querySelector('.hamburger');
 const headerNav = document.querySelector('.header__nav');
@@ -6,11 +7,15 @@ const team = document.querySelector('.team');
 const teamItem = document.querySelectorAll('.team__item');
 const teamItemLength = teamItem.length;
 
+const menu = document.querySelector('.menu');
+const menuItem = document.querySelectorAll('.menu__item');
+const menuItemLength = menuItem.length;
+
 function noScroll() {
   window.scrollTo(0, 0);
 }
 
-//////////// HAMBURGER ///////////////
+//////////// HAMBURGER //////////////////////////////////////////////
 
 hamburgerMenuInput.addEventListener("click", function(e) {
   e.preventDefault;
@@ -25,7 +30,9 @@ hamburgerMenuInput.addEventListener("click", function(e) {
   }
 });
 
-//////////// ACCO VERTICAL -> TEAM ///////////
+
+
+//////////// ACCO VERTICAL -> TEAM /////////////////////////////////
 
 team.addEventListener('click', function(e) {
   e.preventDefault();
@@ -45,6 +52,30 @@ for (let i=0; i<teamItemLength; i++) {
         teamItem[i].classList.remove('team__item--active');
       }
       teamItem[i].classList.add('team__item--active');
+    }
+  });
+}
+
+
+//////////// ACCO HORIZONTAL -> MENU /////////////////////////////////
+
+menu.addEventListener('click', function(e) {
+  e.preventDefault();
+  for (let i=0; i<menuItemLength; i++) {
+    menuItem[i].classList.remove('menu__item--active');
+  }
+});
+for (let i=0; i<menuItemLength; i++) {
+  menuItem[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (menuItem[i].classList.contains('menu__item--active')) {
+      menuItem[i].classList.remove('menu__item--active');
+    } else {
+      for (let i=0; i<menuItemLength; i++) {
+        menuItem[i].classList.remove('menu__item--active');
+      }
+      menuItem[i].classList.add('menu__item--active');
     }
   });
 }

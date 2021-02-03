@@ -8,21 +8,9 @@
       background-color: rgba($orange, 1);
     }
     & .contain__info {
-      width: 25vw;
-      max-width: rem(320px);
-      height: auto;
+      transform: scale(1);
+      transform-origin: top left;
       opacity: 1;
-      & .contain__icon {
-        width: rem(48px);
-        height: rem(39px);
-      }
-      & .contain__desc {
-        font-size: rem(14px);
-      }
-      & .contain__close {
-        width: rem(20px);
-        height: rem(20px);
-      }
       @include tablets {
         width: 50vw;
         & .contain__list {
@@ -60,15 +48,19 @@
   margin-top: rem(5px);
 }
 .contain__info {
-  transition: opacity 1.2s, width .7s, height .7s;
+  transform-origin: top left;
+  transform: scale(0);
+  transition: .6s;
+  // transition: opacity 1.2s, width .7s, height .7s;
   opacity: 0;
   position: relative;
   display: flex;
   flex-direction: column;
   background-color: rgba($color: $white, $alpha: .9);
   border-radius: rem(5px);
-  width: 0;
-  height: 0;
+  width: 25vw;
+  max-width: rem(320px);
+  height: auto;
   position: absolute;
   top: 0;
   left: 100%;
@@ -77,9 +69,6 @@
   display: flex;
   flex-direction: column;
   padding: 6%;
-  // @include tablets {
-  //   padding: 6% 20% 6% 6%;
-  // }
   @include phones {
     padding: 6% 3%;
   }
@@ -97,8 +86,8 @@
   }
 }
 .contain__icon {
-  width: 0;
-  height: 0;
+  width: rem(48px);
+  height: rem(39px);
   margin-right: 12%;
   display: flex;
   justify-content: center;
@@ -111,7 +100,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex: 1;
-  font-size: 0;
+  font-size: rem(14px);
   transition: .5s;
 }
 .contain__name, .contain__weight {
@@ -120,8 +109,8 @@
   color: $black;
 }
 .contain__close {
-  width: 0;
-  height: 0;
+  width: rem(20px);
+  height: rem(20px);
   display: none;
   fill: rgba($red, .7);
   position: absolute;
