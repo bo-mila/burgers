@@ -1,0 +1,17 @@
+.burger {
+  background-image: linear-gradient(to top, #f9b43b, #eb8c38, #f9b43b);
+}
+.burger__container {
+  height: 100%;
+  width: 94%;
+  display: flex;
+}
+.burger__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.burger__slider {
+  flex: 1;
+}

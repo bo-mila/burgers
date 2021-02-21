@@ -1,0 +1,15 @@
+.slider {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+.slider__item {
+  position: absolute;
+  transition: all ease .6s;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  // overflow: hidden;
+}

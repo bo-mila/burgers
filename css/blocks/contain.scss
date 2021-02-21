@@ -1,0 +1,126 @@
+.contain {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: $z-contain;
+  &:hover {
+    & .contain__img {
+      background-color: rgba($orange, 1);
+    }
+    & .contain__info {
+      transform: scale(1);
+      transform-origin: top left;
+      opacity: 1;
+      @include tablets {
+        width: 50vw;
+        & .contain__list {
+          width: 86%;
+        }
+      }
+      @include phones {
+        width: 54vw;
+        flex-direction: row;
+        justify-content: space-between;
+        transform: scale(.9);
+        & .contain__list {
+          width: 83%;
+        }
+      }
+    }
+  }
+}
+.contain__img {
+  width: rem(90px);
+  height: rem(90px);
+  background-color: rgba($orange, .4);
+  border-radius: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: .6s;
+}
+.contain__title {
+  @include gagalin();
+  font-size: rem(14px);
+  color: $white;
+  text-transform: uppercase;
+  margin-top: rem(5px);
+}
+.contain__info {
+  transform-origin: top left;
+  transform: scale(0);
+  transition: .6s;
+  // transition: opacity 1.2s, width .7s, height .7s;
+  opacity: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba($color: $white, $alpha: .9);
+  border-radius: rem(5px);
+  width: 25vw;
+  max-width: rem(320px);
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.contain__list {
+  display: flex;
+  flex-direction: column;
+  padding: 6%;
+  @include phones {
+    padding: 6% 3%;
+  }
+}
+.contain__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 3%;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include tablets {
+    margin-bottom: 0;
+  }
+}
+.contain__icon {
+  width: rem(48px);
+  height: rem(39px);
+  margin-right: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+  @include phones {
+    margin-right: 4%;
+  }
+}
+
+.contain__desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  font-size: rem(14px);
+  transition: .5s;
+}
+.contain__name, .contain__weight {
+  @include ubuntu(medium);
+  line-height: 1.71;
+  color: $black;
+}
+.contain__close {
+  width: rem(20px);
+  height: rem(20px);
+  display: none;
+  fill: rgba($red, .7);
+  position: absolute;
+  top: 8%;
+  right: 6%;
+  @include tablets {
+    display: flex;
+  }
+}

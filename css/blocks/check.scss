@@ -1,0 +1,36 @@
+.check {
+  position: relative;
+}
+.check__checkbox {
+  display: none;
+
+  &:checked {
+    & ~ .check__title {
+      color: $red;
+      &::before {
+        border-color: $yellow;
+      }
+    }
+    & ~ .checkbox-icon {
+      display: block;
+    }
+  }
+}
+.check__title {
+  @include ubuntu(light);
+  font-size: rem(14px);
+  display: flex;
+  flex-direction: row;
+  color: $white;
+  &::before {
+    content: "";
+    flex-shrink: 0;
+    margin-right: rem(10px);
+    width: rem(16px);
+    height: rem(16px);
+    border: rem(1px) solid $white;
+    background-color: $white;
+    border-radius: 20%;
+    display: flex;
+  }
+}

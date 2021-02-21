@@ -1,0 +1,124 @@
+.slide {
+  display: flex;
+  align-items: center;
+  // width: 100%;
+  // position: relative;
+  width: 100%;
+  height: auto;
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.slide__contain {
+  position: absolute;
+  left: 5%;
+  top: -5%;
+  @include tablets {
+    top: -5%;
+  }
+  @include phones {
+    left: 0%;
+    top: -7%;
+  }
+}
+.slide__kkal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  @include tablets {
+    bottom: inherit;
+    left: initial;
+    top: -5%;
+    right: 5%;
+  }
+  @include phones {
+    right: 0%;
+    top: -7%;
+  }
+}
+.slide__img {
+  width: 50%;
+  flex-shrink: 1;
+  @include tablets {
+    width: 66%;
+    margin-bottom: rem(10px);
+  }
+  @include phones {
+    width: 93%;
+  }
+}
+.slide__pic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.slide__desc {
+  flex: 1;
+  flex-shrink: 0;
+  color: $white;
+  @include tablets {
+    text-align: center;
+    width: 92%;
+  }
+  @include phones {
+    width: 90%;
+  }
+}
+.slide__info {
+  text-align: left;
+  margin-bottom: rem(26px);
+  @include tablets {
+    margin-bottom: rem(10px);
+  }
+}
+.slide__title {
+  text-align: left;
+  margin-bottom: rem(46px);
+  @include tablets {
+    text-align: center;
+    margin-bottom: rem(20px);
+  }
+}
+.slide__text {
+  @include ubuntu(light);
+  font-size: rem(14px);
+  line-height: 1.71;
+  @include tablets {
+    text-align: center;
+  }
+}
+.slide__order {
+  display: flex;
+  align-items: baseline;
+  @include tablets {
+    justify-content: center;
+  }
+}
+.slide__price {
+  margin-right: rem(28px);
+  @include gagalin;
+  font-size: rem(32px);
+  color: $orange;
+  display: flex;
+  align-items: baseline;
+  @include tablets {
+    font-size: rem(30px);
+    margin-right: rem(18px);
+  }
+  @include phones {
+    font-size: rem(20px);
+    margin-right: rem(8px);
+  }
+}
+.slide__numbers {
+  font-size: rem(72px);
+  margin-right: rem(5px);
+  @include tablets {
+    font-size: rem(63px);
+  }
+  @include phones {
+    font-size: rem(48px);
+  }
+}
