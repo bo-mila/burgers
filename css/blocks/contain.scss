@@ -16,15 +16,16 @@
         & .contain__list {
           width: 86%;
         }
-       }
-       @include phones {
-         width: 62vw;
-          flex-direction: row;
-          justify-content: space-between;;
-          & .contain__list {
-            width: 83%;
-          }
+      }
+      @include phones {
+        width: 54vw;
+        flex-direction: row;
+        justify-content: space-between;
+        transform: scale(.9);
+        & .contain__list {
+          width: 83%;
         }
+      }
     }
   }
 }
@@ -93,6 +94,9 @@
   justify-content: center;
   align-items: center;
   transition: .5s;
+  @include phones {
+    margin-right: 4%;
+  }
 }
 
 .contain__desc {
