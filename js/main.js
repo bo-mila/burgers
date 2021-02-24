@@ -82,33 +82,30 @@ for (let i=0; i<menuItemLength; i++) {
 
 
 
-//////////////  SLIDER /////////////////////////
-
+//////////////  SLIDER ПЛАВНЫЙ БЕЗКОНЕЧНЫЙ  /////////////////////////
+ ////////// можно указывать кол-во видимых элементов
 const burger = document.querySelector('.burger');
-const burgerList = document.querySelector('.slider');
+const slider = document.querySelector('.slider');
 let sliderItem = document.querySelectorAll('.slider__item');
-const sliderItemLength = sliderItem.length;
-const burgerArrowLeft = document.querySelector('.burger__arrow-left');
-const burgerArrowRight = document.querySelector('.burger__arrow-right');
+const sliderLength = sliderItem.length;
+const sliderArrowLeft = document.querySelector('.burger__arrow-left');
+const sliderArrowRight = document.querySelector('.burger__arrow-right');
 
-let slider = [];
-for (let i = 0; i<sliderItemLength; i++) {
-  slider[i] = sliderItem[i];
+let sliderCopy = [];
+for (let i = 0; i<sliderLength; i++) {
+  sliderCopy[i] = sliderItem[i];
   sliderItem[i].remove();
 }
-let step = 0;
-let offset = 0;
+let slideView = 1;
+let slideNumberView = 0;
 
+createSlider();
 
-
-burgerSlider();
-step = 0;
-
-burgerArrowLeft.addEventListener('click', function(event) {
+sliderArrowLeft.addEventListener('click', function(event) {
   event.preventDefault();
   left();
 });
-burgerArrowRight.addEventListener('click', function(event) {
+sliderArrowRight.addEventListener('click', function(event) {
   event.preventDefault();
   right();
 });
@@ -118,102 +115,93 @@ burger.addEventListener('click', function(event) {
 
 
 
-function burgerSlider() {
-  let li = document.createElement('li');
-  li = slider[slider.length-1];
-  li.classList.add('slider__item');
-  li.style.left = -100 + '%';
-  burgerList.appendChild(li);
-
-  li = slider[step];
-  li.style.left = offset*100 + '%';
-  burgerList.appendChild(li);
-
-  li = slider[step+1];
-  li.style.left = offset*100 + 100 + '%';
-  burgerList.appendChild(li);
-  offset = 1;
+function createSlider() {
+  createSlideView();
+  createSlideLeft();
+  createSlideRight();
 }
+function createSlideView () {
+  for (let i = slideNumberView; i<slideView; i++) {
+    let li = document.createElement('li');
+    li = sliderCopy[i];
+    li.classList.add('slider__item');
+    li.style.left = i*(100/slideView) + '%';
+    slider.appendChild(li);
+  }
+  slideNumberView = slideView - 1;
+}
+function createSlideLeft() {
+  let slideNumberLeft;
+  if ((slideNumberView - slideView) < 0) {
+    slideNumberLeft = sliderLength + (slideNumberView - slideView);
+  } else {
+    slideNumberLeft = slideNumberView - slideView;
+  }
+  let li = document.createElement('li');
+  li = sliderCopy[slideNumberLeft];
+  li.classList.add('slider__item');
+  li.style.left = -(100/slideView) + "%";
+  slider.insertBefore(li, slider.firstElementChild);
+}
+function createSlideRight() {
+  let slideNumberRight;
+  if (slideNumberView == (sliderLength - 1)) {
+    slideNumberRight = 0;
+  } else {
+    slideNumberRight = slideNumberView + 1;
+  }
+  let li = document.createElement('li');
+  li = sliderCopy[slideNumberRight];
+  li.classList.add('slider__item');
+  li.style.left = 100 + '%';
+  slider.appendChild(li);
+}
+
 
 function left() {
-  burgerArrowLeft.onclick = null;
+  sliderArrowLeft.onclick = null;
   let sliderL = document.querySelectorAll('.slider__item');
   let offsetL = -1;
-  for (let i = 0; i<sliderL.length; i++) {
-    sliderL[i].style.left = offsetL*100 - 100 + "%";
+  // console.log(offsetL)
+  for (let i = 0; i<slideView+2; i++) {
+    sliderL[i].style.left = (offsetL*100 - 100)/slideView + "%";
+    // console.log(offsetL*100 - 100);
     offsetL++;
   }
+  slideNumberView++;
+  if (slideNumberView == sliderLength) {
+    slideNumberView = 0;
+  }
+  console.log(slideNumberView);
   setTimeout(function () {
     sliderL[0].remove();
-    burgerSliderL();
-    burgerArrowLeft.onclick = left;
+    createSlideRight();
+    sliderArrowLeft.onclick = left;
   }, 600);
-}
-
-function burgerSliderL() {
-  if (step == (slider.length-1)) {
-    step = 1;
-  } else {
-    if (step == (slider.length-2)) {
-      step = 0;
-    } else {
-      step = (step +2);
-    }
-  }
-  let li = document.createElement('li');
-  li = slider[step];
-  li.classList.add('slider__item');
-  li.style.left = offset*100 + "%";
-  burgerList.appendChild(li);
-  if (step == 0) {
-    step = (slider.length-1);
-  } else {
-    step = (step - 1);
-  }
-  offset = 1;
 }
 
 function right() {
-  burgerArrowRight.onclick = null;
-  
+  sliderArrowRight.onclick = null;
   let sliderR = document.querySelectorAll('.slider__item');
-  let offsetR = (sliderR.length-1);
+  let offsetR = (slideView+1);
   
-  for (let i = (sliderR.length-1); i>=0; i--) {
-    sliderR[i].style.left = offsetR*100 + '%';
-    offsetR --;
+  for (let i = (slideView+1); i>-1; i--) {
+    console.log(i, offsetR);
+    sliderR[i].style.left = offsetR*100/slideView + '%';
+    offsetR--;
+  }
+  slideNumberView--;
+  if (slideNumberView < 0) {
+    slideNumberView = (sliderLength - 1);
   }
   setTimeout(function() {
-    sliderR[(sliderR.length-1)].remove();
-      burgerSliderR();
-      burgerArrowRight.onclick = right;
+    sliderR[(slideView+1)].remove();
+      createSlideLeft();
+      sliderArrowRight.onclick = right;
   }, 600);
 }
 
 
-function burgerSliderR() {
-  if (step == 0) {
-    step = (slider.length-2);
-  } else {
-    if (step == 1) {
-      step = (slider.length-1);
-    } else {
-      step = (step -2);
-    }
-  }
-  let offset = -1;
-  let li = document.createElement('li');
-  li = slider[step];
-  li.classList.add('slider__item');
-  li.style.left = offset*100 + '%';
-  burgerList.insertBefore(li, burgerList.firstElementChild);
-  if (step == (slider.length-1)) {
-      step = 0;
-    } else {
-      step = (step+1);
-    }
-  offset = 1;
-}
 
 
 
@@ -225,122 +213,3 @@ function burgerSliderR() {
 
 
 
-
-
-/// плавный бесконечный слайдер
-// let item = document.querySelectorAll('.burgers__item');
-// const itemLength = item.length;
-
-
-
-// let step = 0;
-// let offset = 0;
-
-// function burgerSlider() {
-//   let div = document.createElement('li');
-//   div = slider[slider.length-1];
-//   div.classList.add('burgers__item');
-//   div.style.left = -100 + '%';
-//   burgers__list.appendChild(div); 
-  
-//   div = slider[step];
-//   div.style.left = offset*100 + '%';
-//   burgers__list.appendChild(div); 
-
-//   div = slider[step+1];
-//   div.style.left = offset*100 + 100 + '%';
-//   burgers__list.appendChild(div); 
-//   offset = 1;
-// }
-
-// function burgerSliderL() {
-//   if (step == (slider.length-1)) {
-//     step = 1;
-//   } else {
-//     if (step == (slider.length-2)) {
-//       step = 0;
-//     } else {
-//       step = (step +2);
-//     }
-//   }
-//   let div = document.createElement('li');
-//   div = slider[step];
-//   div.classList.add('burgers__item');
-//   div.style.left = offset*100 + '%';
-//   burgers__list.appendChild(div); 
-    
-//   if (step == 0) {
-//     step = (slider.length-1);
-//   } else {
-//     step = (step - 1);
-//   }
-//   offset = 1;
-// }
-
-// function left() {
-//   leftArrow.onclick = null;
-//   let slider2 = document.querySelectorAll('.burgers__item');
-//   let offset2 = -1;
-//   for (let i = 0; i<slider2.length; i++) {
-//     slider2[i].style.left = offset2*100 - 100 + '%';
-//     offset2 ++;
-//   }
-//   setTimeout(function() {
-//     slider2[0].remove();
-//     burgerSliderL();
-//     leftArrow.onclick = left;
-//   }, 600);
-// }
-
-// function burgerSliderR() {
-//   if (step == 0) {
-//     step = (slider.length-2);
-//   } else {
-//     if (step == 1) {
-//       step = (slider.length-1);
-//     } else {
-//       step = (step -2);
-//     }
-//   }
-//   let offset = -1;
-//   let div = document.createElement('li');
-//   div = slider[step];
-//   div.classList.add('burgers__item');
-//   div.style.left = offset*100 + '%';
-//   burgers__list.insertBefore(div, burgers__list.firstElementChild);
-//   if (step == (slider.length-1)) {
-//       step = 0;
-//    } else {
-//      step = (step+1);
-//    }
-//   offset = 1;
-// }
-
-// function right() {
-//   rightArrow.onclick = null;
-  
-//   let slider2 = document.querySelectorAll('.burgers__item');
-//   let offset2 = (slider2.length-1);
- 
-//   for (let i = (slider2.length-1); i>=0; i--) {
-//     slider2[i].style.left = offset2*100 + '%';
-//     offset2 --;
-//   }
-//   setTimeout(function() {
-//     slider2[(slider2.length-1)].remove();
-//      burgerSliderR();
-//      rightArrow.onclick = right;
-//   }, 600);
-// }
-
-// burgerSlider();
-// step = 0;
-
-// leftArrow.onclick = left;
-// rightArrow.onclick = right;
-
-// const burgers = document.querySelector('.burgers');
-
-// burgers.addEventListener('click', function(event) {
-//   event.preventDefault();
-// });

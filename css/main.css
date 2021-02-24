@@ -1110,7 +1110,7 @@ table {
 
 .slide__kkal {
   position: absolute;
-  left: 0;
+  left: 5%;
   bottom: 0; }
   @media screen and (max-width: 768px) {
     .slide__kkal {
