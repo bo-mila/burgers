@@ -332,3 +332,37 @@ formPhoneValid.addEventListener('keydown', e => {
     }
   }
 });
+
+////////////////  FIXED-MENU  ///////////////////
+$('.fixed-menu__item').on('click', function (e) {
+  e.preventDefault();
+  let elem = e.target;
+  let offset = 0;
+  if (elem.classList.contains('scrollToFirst')){
+    offset = $('.first').offset().top;
+  } else if (elem.classList.contains('scrollToBest')) {
+    offset = $('.best').offset().top;
+  } else if (elem.classList.contains('scrollToBurger')) {
+    offset = $('.burger').offset().top;
+  } else if (elem.classList.contains('scrollToTeam')) {
+    offset = $('.team').offset().top;
+  } else if (elem.classList.contains('scrollToMenu')) {
+    offset = $('.menu').offset().top;
+  } else if (elem.classList.contains('scrollToReviews')) {
+    offset = $('.reviews').offset().top;
+  } else if (elem.classList.contains('scrollToOrder')) {
+    offset = $('.order').offset().top;
+  } else if (elem.classList.contains('scrollToContacts')) {
+    offset = $('.contacts').offset().top;
+  } else {
+    return;
+  }
+  console.log(offset);
+  scrollToSection(offset);
+});
+function scrollToSection(offset) {
+  $('html, body').animate({
+    'scrollTop': offset
+  }, 1000);
+  return;
+}
