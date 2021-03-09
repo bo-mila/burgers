@@ -307,31 +307,52 @@ function createOverlay(template) {
 }
 
 //////////////валидация поля ввода телефона
-let formPhoneValid = document.querySelector('#phone');
-let valueReturn = '';
-formPhoneValid.addEventListener('keydown', e => {
-  let keyName = e.key;
-  e.preventDefault();
-  if (((keyName >= '0' && keyName <= "9") || (keyName ==='-')) && (valueReturn.length < 16)) {
-    if (formPhoneValid.selectionStart != formPhoneValid.selectionEnd) {
-      formPhoneValid.setRangeText('');
-      valueReturn = formPhoneValid.value + keyName;
-    } else {
-      valueReturn = valueReturn + keyName;
-    }
-    return formPhoneValid.value = valueReturn;
-  } else {
-    if (keyName === "Backspace") {
-      if (formPhoneValid.selectionStart != formPhoneValid.selectionEnd) {
-        formPhoneValid.setRangeText('');
-        valueReturn = formPhoneValid.value;
-      } else {
-        valueReturn = valueReturn.substring(0,valueReturn.length - 1);
-      }
-      return formPhoneValid.value = valueReturn;
-    }
+let formPhoneValid = document.querySelector('#phoneValid');
+// let valueReturn = '';
+// formPhoneValid.addEventListener('keydown', e => {
+//   let keyName = e.key;
+//   e.preventDefault();
+//   if (((keyName >= '0' && keyName <= "9") || (keyName ==='-')) && (valueReturn.length < 16)) {
+//     if (formPhoneValid.selectionStart != formPhoneValid.selectionEnd) {
+//       formPhoneValid.setRangeText('');
+//       valueReturn = formPhoneValid.value + keyName;
+//     } else {
+//       valueReturn = valueReturn + keyName;
+//     }
+//     return formPhoneValid.value = valueReturn;
+//   } else {
+//     if (keyName === "Backspace") {
+//       if (formPhoneValid.selectionStart != formPhoneValid.selectionEnd) {
+//         formPhoneValid.setRangeText('');
+//         valueReturn = formPhoneValid.value;
+//       } else {
+//         valueReturn = valueReturn.substring(0,valueReturn.length - 1);
+//       }
+//       return formPhoneValid.value = valueReturn;
+//     }
+//   }
+// });
+formPhoneValid.addEventListener('keydown', function(e) {
+  let isDigit = false;
+  let isDash = false;
+  let isControl = false;
+  if (e.key >= 0 || e.key <= 9) {
+    isDigit = true;
   }
-});
+  if (e.key == 'ArrowLeft' ||
+      e.key == 'ArrowRight' ||
+      e.key == 'Backspace' ||
+      e.key == 'Tab' ||
+      e.key == 'Delete') {
+        isControl = true;
+  }
+  if (e.key === '-') {
+    isDash = true;
+  }
+  if (!isDigit && !isDash && !isControl) {
+    e.preventDefault();
+  }
+})
 
 ////////////////  FIXED-MENU  ///////////////////
 $('.fixed-menu__item').on('click', function (e) {
