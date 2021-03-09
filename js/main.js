@@ -30,6 +30,40 @@ hamburgerMenuInput.addEventListener("click", function(e) {
   }
 });
 
+hamburger.addEventListener('click', function (e) {
+  e.preventDefault();
+  let elem = e.target;
+  let offset = 0;
+  if (elem.classList.contains('scrollToFirst')){
+    offset = $('.first').offset().top;
+  } else if (elem.classList.contains('scrollToBest')) {
+    offset = $('.best').offset().top;
+  } else if (elem.classList.contains('scrollToBurger')) {
+    offset = $('.burger').offset().top;
+  } else if (elem.classList.contains('scrollToTeam')) {
+    offset = $('.team').offset().top;
+  } else if (elem.classList.contains('scrollToMenu')) {
+    offset = $('.menu').offset().top;
+  } else if (elem.classList.contains('scrollToReviews')) {
+    offset = $('.reviews').offset().top;
+  } else if (elem.classList.contains('scrollToHow-work')) {
+    offset = $('.how-work').offset().top;
+  } else if (elem.classList.contains('scrollToOrder')) {
+    offset = $('.order').offset().top;
+  } else if (elem.classList.contains('scrollToContacts')) {
+    offset = $('.contacts').offset().top;
+  } else {
+    return;
+  }
+  hamburger.style.display = "none";
+  headerNav.style.display = "flex";
+  window.removeEventListener('scroll', noScroll);
+  hamburgerMenuInput.click();
+  setTimeout(function() {
+    scrollToSection(offset);
+  }, 200);
+});
+
 
 
 //////////// ACCO VERTICAL -> TEAM /////////////////////////////////
@@ -256,6 +290,8 @@ function validField(field) {
 
 
 
+
+
 //////////////////    --------OVERLAY------------
 const template = document.querySelector('#overlayTemp').innerHTML;
 const overlay = createOverlay(template);
@@ -305,6 +341,13 @@ function createOverlay(template) {
     },
   };
 }
+
+
+
+
+
+
+
 
 //////////////валидация поля ввода телефона
 let formPhoneValid = document.querySelector('#phoneValid');
@@ -371,6 +414,8 @@ $('.fixed-menu__item').on('click', function (e) {
     offset = $('.menu').offset().top;
   } else if (elem.classList.contains('scrollToReviews')) {
     offset = $('.reviews').offset().top;
+  } else if (elem.classList.contains('scrollToHow-work')) {
+    offset = $('.how-work').offset().top;
   } else if (elem.classList.contains('scrollToOrder')) {
     offset = $('.order').offset().top;
   } else if (elem.classList.contains('scrollToContacts')) {
@@ -378,9 +423,13 @@ $('.fixed-menu__item').on('click', function (e) {
   } else {
     return;
   }
-  console.log(offset);
   scrollToSection(offset);
 });
+
+
+
+
+//////////////// SCROLL  ///////////////////////////
 function scrollToSection(offset) {
   $('html, body').animate({
     'scrollTop': offset

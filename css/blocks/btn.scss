@@ -5,6 +5,7 @@
   color: $white;
   text-transform: uppercase;
   line-height: 1;
+  outline: none;
   @include ubuntu(medium);
   font-size: rem(13px);
   

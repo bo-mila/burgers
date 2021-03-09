@@ -91,6 +91,8 @@
   position: relative;
   width: rem(80px);
   z-index: $z-menu-name;
+  outline: none;
+
    @include phones {
      width: rem(70px);
      font-size: rem(35px);
