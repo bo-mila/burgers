@@ -41,13 +41,16 @@ html, body {
 .wrapper {
   overflow: hidden;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.wrapper__content {
-  flex: 1;
+.maincontent {
+  position: absolute;
+  // transform: translateY(0%);
+  height: 100%;
+  transition: transform 1s;
 }
 .container {
   margin: 0 auto;

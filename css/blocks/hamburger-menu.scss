@@ -8,6 +8,7 @@
 	position: relative;
 	height: rem(22px);
 	align-items: center;
+	z-index: 20000;
 	@include tablets {
 		display: flex;
 	}

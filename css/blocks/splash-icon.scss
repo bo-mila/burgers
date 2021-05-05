@@ -1,0 +1,17 @@
+.splash-icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(.8);
+  width: rem(81px);
+  height: rem(117px);
+  fill: $white;
+  opacity: .7;
+  // transform: scale(.8);
+  transition: .6s;
+  &:hover {
+    transform: translate(-50%,-50%) scale(1);
+    opacity: .9;
+  }
+}
