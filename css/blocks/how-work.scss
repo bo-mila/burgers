@@ -29,4 +29,11 @@
   // justify-content: center;
   width: 70%;
   height: 54%;
+  @include tablets {
+    width: 95%;
+    height: 56%;
+  }
+  @include phones {
+    height: 38%;
+  }
 }

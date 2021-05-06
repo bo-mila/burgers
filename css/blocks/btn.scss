@@ -1,4 +1,6 @@
 .btn {
+  @include ubuntu(medium);
+  font-size: rem(13px);
   padding: rem(10px) rem(12px);
   border-radius: 4px;
   background-color: $red;
@@ -6,11 +8,16 @@
   text-transform: uppercase;
   line-height: 1;
   outline: none;
-  @include ubuntu(medium);
-  font-size: rem(13px);
+  transition: .6s;
+  &:hover {
+    background-color: $orange;
+  }
   
   &--black {
     background-color: $black;
+    &:hover {
+      background-color: $black-btn-hover;
+    }
   }
 
   &--transp {

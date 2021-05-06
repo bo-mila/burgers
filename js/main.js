@@ -462,9 +462,76 @@ const hamburgerItems = $('.hamburger__item');
 // первой секции нужно навесить активный класс ----- НУЖНО ЗАМЕНИТЬ этот код, чтоб это было автоматич.
 // firstSection = document.querySelector('.first');
 // firstSection.classList.add('active');
-$(document).ready(() => {
-  sections.first().addClass('active')
-});
+// $(document).ready(() => {
+//   $(".first").addClass('active')
+// });
+
+
+
+
+
+
+
+
+
+// функция, кот. определяет, к какой секции скроллить
+const scrollToSection = () => {
+  // sectionsAll - NodeList, поэтому его нужно сделать объектом,
+  // чтобы использовать filter(), в котором функция возвращает секцию,
+  // которая имеет класс active
+  // не получилось на ванильном 
+  // const activeSection = Object.values(sectionsAll).filter(function(e) { 
+  //   return e.classList.contains('active');
+  // });
+  const activeSection = sections.filter(".active");
+  // получаем следующую секцию за активной
+  // не получилось на ванильном:
+  // const nextSection = activeSection.nextElementSibling();
+  // for (var i = 0; i < sectionsAll.length; ++i) {
+  //   let item = sectionsAll[i];  
+  //   if (item == activeSection)
+  //     indexSection = i;
+  // }
+  // const nextSection = activeSection.next();
+
+
+  // получаем предыдущую секцию перед активной
+  // не получилось на ванильном 
+  // const prevSection = activeSection.previousElementSibling();
+  // const prevSection = activeSection.prev();
+
+
+  // не получились предыдущие варианты - переделала через индекс активной секции
+  let indexActiveSection = activeSection.index() - 1;
+  // if (indexActiveSection < 0) {
+  //   indexActiveSection = 0;
+  // }
+
+  return {
+    next() {
+      if (indexActiveSection<sections.length-1)
+      performTransition(indexActiveSection+1);
+    },
+    prev() {
+      if (indexActiveSection!=0)
+      performTransition(indexActiveSection-1);
+    }
+  };
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 document.addEventListener('wheel', e => {
   if (hamburgerMenuInput.checked == true) {
@@ -508,29 +575,6 @@ $(window).on("keydown", e => {
       break;
   }
 });
-
-
-
-
-// подключила библ. touch swipe для drag and drop
-// но сначала проверка на вход с мобильного устройства
-const md = new MobileDetect(window.navigator.userAgent);
-if (md.mobile()) {
-  const windowScroller = scrollToSection();
-  $("body").swipe({
-    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-      const directionS = direction === "up" ? "next" : "prev";
-      switch (directionS) {
-        case "next":
-          windowScroller.next();
-          break;
-        case "prev":
-          windowScroller.prev();
-          break;
-      }
-    }
-  });
-}
 
 
 
@@ -595,48 +639,34 @@ const changeFixedMenuActiveItem = (sectionEq) => {
 };
 
 
-// функция, кот. определяет, к какой секции скроллить
-const scrollToSection = () => {
-  // sectionsAll - NodeList, поэтому его нужно сделать объектом,
-  // чтобы использовать filter(), в котором функция возвращает секцию,
-  // которая имеет класс active
-  // не получилось на ванильном 
-  // const activeSection = Object.values(sectionsAll).filter(function(e) { 
-  //   return e.classList.contains('active');
-  // });
-  const activeSection = sections.filter(".active");
 
 
-  // получаем следующую секцию за активной
-  // не получилось на ванильном:
-  // const nextSection = activeSection.nextElementSibling();
-  // for (var i = 0; i < sectionsAll.length; ++i) {
-  //   let item = sectionsAll[i];  
-  //   if (item == activeSection)
-  //     indexSection = i;
-  // }
-  // const nextSection = activeSection.next();
 
 
-  // получаем предыдущую секцию перед активной
-  // не получилось на ванильном 
-  // const prevSection = activeSection.previousElementSibling();
-  // const prevSection = activeSection.prev();
 
+// $("body").on('touchmove', (e) => {
+//   e.preventDefault();
+// });
 
-  // не получились предыдущие варианты - переделала через индекс активной секции
-  const indexActiveSection = activeSection.index();
-  return {
-    next() {
-      if (indexActiveSection!=sections.length)
-      performTransition(indexActiveSection);
-    },
-    prev() {
-      if (indexActiveSection!=1)
-      performTransition(indexActiveSection-2);
+// подключила библ. touch swipe для drag and drop
+// но сначала проверка на вход с мобильного устройства
+const md = new MobileDetect(window.navigator.userAgent);
+if (md.mobile()) {
+  $("body").swipe({
+    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+      const directionS = direction === "up" ? "next" : "prev";
+      const windowScroller = scrollToSection();
+      switch (directionS) {
+        case "next":
+          windowScroller.next();
+          break;
+        case "prev":
+          windowScroller.prev();
+          break;
+      }
     }
-  };
-};
+  });
+}
 
 
 
@@ -644,34 +674,45 @@ const scrollToSection = () => {
 
 
 
-// скролл на мобильных устр-вах
-(function dragDrop() {
-  const wrapper = document.querySelector(".wrapper");
-  const firstPic = document.querySelector(".first__pic");
-  firstPic.draggable = false;
-  maincontent.draggable = true;
-  let ePageYStart = 0;
+
+
+
+
+
+
+
+
+
+
+
+// // скролл на мобильных устр-вах
+// (function dragDrop() {
+//   const wrapper = document.querySelector(".wrapper");
+//   const firstPic = document.querySelector(".first__pic");
+//   firstPic.draggable = false;
+//   maincontent.draggable = true;
+//   let ePageYStart = 0;
   
-  maincontent.addEventListener("dragstart", (e) => {
-    e.dataTransfer.setData("text/html", "dragstart");
-    // для того, чтобы небыло полупрозрачной копии maincontent при перетягивании
-    e.dataTransfer.setDragImage(document.createElement('div'), 0, 0);
-    ePageYStart = e.pageY;
-  });
-  maincontent.addEventListener("dragend", (e) => {
-    const windowScroller = scrollToSection();
-    if (e.pageY < ePageYStart) {
-      windowScroller.next();
-    }
-    if (e.pageY > ePageYStart) {
-      windowScroller.prev();
-    }
-  });
-  wrapper.addEventListener("dragover", (e) => {
-    e.preventDefault();
+//   maincontent.addEventListener("dragstart", (e) => {
+//     e.dataTransfer.setData("text/html", "dragstart");
+//     // для того, чтобы небыло полупрозрачной копии maincontent при перетягивании
+//     e.dataTransfer.setDragImage(document.createElement('div'), 0, 0);
+//     ePageYStart = e.pageY;
+//   });
+//   maincontent.addEventListener("dragend", (e) => {
+//     const windowScroller = scrollToSection();
+//     if (e.pageY < ePageYStart) {
+//       windowScroller.next();
+//     }
+//     if (e.pageY > ePageYStart) {
+//       windowScroller.prev();
+//     }
+//   });
+//   wrapper.addEventListener("dragover", (e) => {
+//     e.preventDefault();
     
-  });
-})();
+//   });
+// })();
 
 
 
@@ -1130,7 +1171,7 @@ var placemarks = [
 function init() {
   var map = new ymaps.Map("map", {
     center: [59.94, 30.32],
-    zoom: 12,
+    zoom: 11,
     controls: ['zoomControl'],
     behaviors: ['drag']
   });

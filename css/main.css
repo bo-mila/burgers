@@ -435,6 +435,9 @@ html, body {
   -ms-flex-pack: center;
   justify-content: center;
   overflow: hidden; }
+  @media screen and (max-width: 768px) {
+    .section {
+      min-height: 100vh; } }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -576,6 +579,9 @@ table {
   display: flex; }
 
 .btn {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
   padding: 0.625rem 0.75rem;
   border-radius: 4px;
   background-color: #e45028;
@@ -583,11 +589,15 @@ table {
   text-transform: uppercase;
   line-height: 1;
   outline: none;
-  font-family: 'Ubuntu', Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 0.8125rem; }
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s; }
+  .btn:hover {
+    background-color: #e35028; }
   .btn--black {
     background-color: #2f3234; }
+    .btn--black:hover {
+      background-color: #1f2122; }
   .btn--transp {
     background-color: transparent; }
 
@@ -947,7 +957,7 @@ table {
   @media screen and (max-width: 480px) {
     .best__title {
       font-size: 3.125rem;
-      margin-bottom: 2.375rem; } }
+      margin-bottom: 1.125rem; } }
 
 .best__list {
   display: -webkit-box;
@@ -992,7 +1002,7 @@ table {
       -ms-flex-align: start;
       align-items: flex-start;
       width: 100%;
-      margin-bottom: 2.1875rem; } }
+      margin-bottom: 0.9375rem; } }
   @media screen and (max-width: 480px) {
     .best__item:last-child {
       margin-bottom: 0; } }
@@ -1115,7 +1125,7 @@ table {
   @media screen and (max-width: 480px) {
     .slide__contain {
       left: 0%;
-      top: -7%; } }
+      top: -3%; } }
 
 .slide__kkal {
   position: absolute;
@@ -1130,7 +1140,7 @@ table {
   @media screen and (max-width: 480px) {
     .slide__kkal {
       right: 0%;
-      top: -7%; } }
+      top: -3%; } }
 
 .slide__img {
   width: 50%;
@@ -1164,7 +1174,7 @@ table {
       width: 92%; } }
   @media screen and (max-width: 480px) {
     .slide__desc {
-      width: 90%; } }
+      width: 100%; } }
 
 .slide__info {
   text-align: left;
@@ -1172,6 +1182,9 @@ table {
   @media screen and (max-width: 768px) {
     .slide__info {
       margin-bottom: 0.625rem; } }
+  @media screen and (max-width: 480px) {
+    .slide__info {
+      margin-bottom: 0.3125rem; } }
 
 .slide__title {
   text-align: left;
@@ -1180,6 +1193,9 @@ table {
     .slide__title {
       text-align: center;
       margin-bottom: 1.25rem; } }
+  @media screen and (max-width: 480px) {
+    .slide__title {
+      margin-bottom: 0.3125rem; } }
 
 .slide__text {
   font-family: 'Ubuntu', Helvetica, sans-serif;
@@ -1546,7 +1562,7 @@ table {
       padding: 10% 0% 2% 0; } }
   @media screen and (max-width: 480px) {
     .team__content {
-      padding-top: 24%; } }
+      padding-top: 11%; } }
 
 .team__title {
   margin-bottom: 2.875rem;
@@ -1746,8 +1762,8 @@ table {
   left: 6%; }
   @media screen and (max-width: 480px) {
     .menu__title {
-      font-size: 3.125rem;
-      left: 5%;
+      font-size: 2.8125rem;
+      left: 3%;
       top: 10%; } }
 
 .menu__acc {
@@ -1794,7 +1810,8 @@ table {
     -o-transition: .7s;
     transition: .7s; }
     .menu__item--active .menu__name {
-      color: #f9b43b; }
+      color: #f9b43b;
+      line-height: 1.4; }
     .menu__item--active .menu__desc {
       width: 100%;
       padding-left: 1.875rem;
@@ -1834,7 +1851,7 @@ table {
   }*/ }
   @media screen and (max-width: 480px) {
     .menu__name {
-      width: 4.375rem;
+      width: 5rem;
       font-size: 2.1875rem; } }
   .menu__name div {
     position: absolute;
@@ -2112,6 +2129,13 @@ table {
 .how-work__player {
   width: 70%;
   height: 54%; }
+  @media screen and (max-width: 768px) {
+    .how-work__player {
+      width: 95%;
+      height: 56%; } }
+  @media screen and (max-width: 480px) {
+    .how-work__player {
+      height: 38%; } }
 
 .player {
   position: relative;
@@ -2250,7 +2274,8 @@ table {
 
 #myvideo {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: #202020; }
 
 .player__wrapper {
   display: -webkit-box;
@@ -2571,7 +2596,7 @@ table {
   @media screen and (max-width: 480px) {
     .order__title {
       font-size: 3.125rem;
-      margin-bottom: 2.1875rem; } }
+      margin-bottom: 1.5625rem; } }
 
 .form {
   margin: 0 auto;
@@ -2921,9 +2946,9 @@ table {
       justify-content: center; } }
 
 .phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }

@@ -25,8 +25,8 @@
   top: 15%;
   left: 6%;
   @include phones {
-    font-size: rem(50px);
-    left: 5%;
+    font-size: rem(45px);
+    left: 3%;
     top: 10%;
   }
   }
@@ -55,6 +55,7 @@
     transition: .7s;
     & .menu__name {
       color: $yellow;
+      line-height: 1.4;
       // @include phones {
       //   color: $white;
       // }
@@ -79,6 +80,9 @@
       }
     }
   }
+  // @include phones {
+  //   width: rem(70px);
+  // }
 }
 .menu__name {
   @include gagalin();
@@ -94,7 +98,7 @@
   outline: none;
 
    @include phones {
-     width: rem(70px);
+     width: rem(80px);
      font-size: rem(35px);
    }
   & div {
