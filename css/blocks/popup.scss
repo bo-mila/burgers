@@ -1,0 +1,49 @@
+.popup {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: $black, $alpha: .9);
+  overflow: hidden;
+  display: none;
+  z-index: $z-index-popup;
+}
+
+.popup__container {
+  display: block;
+  background-color: $white;
+  border-radius: rem(6px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 45%;
+  padding: 3% 2%;
+  @include tablets {
+    width: 70%;
+  }
+  @include phones {
+    width: 93%;
+    padding: 3% 3%;
+  }
+}
+.popup__name {
+  @include gagalin();
+  font-size: rem(14px);
+  line-height: 2;
+  color: $black;
+  margin-bottom: 2%;
+}
+.popup__content {
+  @include ubuntu(light);
+  line-height: 1.71;
+  font-size: rem(14px);
+}
+.popup__close {
+  position: absolute;
+  right: 5%;
+  top: 13%;
+  fill: $red;
+  opacity: .7;
+  transform: scale(.8);
+}

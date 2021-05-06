@@ -307,6 +307,71 @@ function createOverlay(template) {
 
 
 
+
+
+///////////////// POP-UP
+const reviewsList = document.querySelector('.reviews__list');
+const popup = document.querySelector('.popup');
+const popupText = document.querySelector('.popup__content');
+const popupName = document.querySelector('.popup__name');
+const popupClose = document.querySelector('.popup__close');
+reviewsList.addEventListener('click', e => {
+  e.preventDefault();
+  let elem = e.target;
+
+  if (elem.classList.contains("reviews__btn")) {
+    let modalText = elem.previousElementSibling.innerHTML;
+    let modalName = elem.previousElementSibling.previousElementSibling.innerHTML;
+    popupText.innerHTML = modalText;
+    popupName.innerHTML = modalName;
+    popup.style.display = 'block';
+    document.body.style.overflow = "hidden";
+  }
+  if (elem.classList.contains("reviews__btn--phones")) {
+    let modalText = elem.previousElementSibling.previousElementSibling.innerHTML;
+    let modalName = elem.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;
+    popupText.innerHTML = modalText;
+    popupName.innerHTML = modalName;
+    popup.style.display = 'block';
+    document.body.style.overflow = "hidden";
+  }
+});
+
+document.addEventListener('keyup', e => {
+  let keyName = e.key;
+
+  if (keyName === 'Escape') {
+    popup.style.display = 'none';
+    document.body.style.overflow = "initial";
+  }
+});
+
+popup.addEventListener("click", e => {
+  if (e.target === popup) {
+    popup.style.display = 'none';
+    document.body.style.overflow = "initial";
+  }
+});
+popupClose.addEventListener("click", function(e) {
+  e.preventDefault();
+  popup.style.display = 'none';
+  document.body.style.overflow = "initial";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////валидация поля ввода телефона
 let formPhoneValid = document.querySelector('#phoneValid');
 // let valueReturn = '';

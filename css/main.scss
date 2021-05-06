@@ -16,6 +16,7 @@ $z-menu-name: 3;
 $z-menu-name-before: -2;
 $z-reviews-hover: 10;
 $z-order: 1;
+$z-index-popup: 25;
 
 @import "./_misc/normalize.scss";
 @import "./_misc/fonts.scss";
@@ -52,6 +53,7 @@ $z-order: 1;
 @import "./blocks/team.scss";
 @import "./blocks/menu.scss";
 @import "./blocks/reviews.scss";
+@import "./blocks/popup.scss";
 @import "./blocks/how-work.scss";
 @import "./blocks/player.scss";
 @import "./blocks/volume-icon.scss";

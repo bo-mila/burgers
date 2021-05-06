@@ -87,8 +87,24 @@
 .reviews__text {
   @include ubuntu(light);
   margin-bottom: rem(20px);
+  overflow: hidden;
   line-height: 1.71;
 
+  & p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    line-clamp: 7;
+    box-orient: vertical;
+    @include tablets {
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+    }
+  }
   @include tablets {
     line-height: 1.6;
     margin-bottom: rem(8px);
