@@ -2724,12 +2724,45 @@ table {
   height: 0.75rem; }
 
 .contacts {
-  background-image: url("../../img/bg/bg-contacts.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  position: relative;
   position: relative; }
+
+.map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden; }
+
+#map {
+  height: 100%;
+  width: 100%; }
+
+.map__hint {
+  padding: 20px;
+  min-height: 55px;
+  min-width: 195px;
+  font-size: 20px;
+  line-height: 1;
+  color: #ffffff;
+  background-color: #f9b43b;
+  border-radius: 20px; }
+
+.map__balloon {
+  padding: 20px;
+  font-size: 30px;
+  line-height: 1;
+  color: #ffffff;
+  background-color: #f9b43b;
+  border-radius: 20px; }
+
+.map__burger-image {
+  float: right;
+  height: 100px;
+  width: 100px; }
 
 .footer {
   position: absolute;

@@ -828,7 +828,6 @@ volumeStart.addEventListener("click", e => {
 
 volumePlayback.addEventListener("click", e => {
   const bar = e.currentTarget;
-  // console.log(e);
   if (e.target.classList.contains("volume__playback")) {
     let eOffsetY = e.offsetY - 8;
     if (eOffsetY < 0) {
@@ -837,7 +836,6 @@ volumePlayback.addEventListener("click", e => {
     if (eOffsetY > 76) {
       eOffsetY = 76;
     }
-    // console.log(eOffsetY);
     const volumeButtonPosPercent = (eOffsetY/(bar.offsetHeight - 8) * 100);
     currentVolume = (100 - volumeButtonPosPercent) / 100;
     player.volume = currentVolume;
@@ -849,7 +847,6 @@ volumePlayback.addEventListener("click", e => {
     player.volume = currentVolume;
     
     volumePlaybackButton.style.top = `${eOffsetY}px`;
-    console.log(currentVolume);
   }
 });
 // $('.volume__playback').on("click", e => {
@@ -1008,3 +1005,96 @@ volumePlayback.addEventListener("click", e => {
 //     bottom: `${buttonPosPersent}%`
 //   });
 // })
+
+
+
+
+
+
+
+//////////  YANDEX КАРТЫ ////////////////////
+
+ymaps.ready(init);
+var placemarks = [
+  {
+    latitude: 59.97,
+    longitude: 30.31,
+    hintContent: '<div class="map__hint">ул.Литераторов, д. 19</div>',
+    balloonContent: [
+      '<div class="map__balloon">',
+      '<img class="map__burger-image" src="../img/content/burger-first.png" alt="Бургер"/>',
+      'Самые вкусные бургеры у нас! Заходите по адресу: ул.Литераторов, д.19',
+      '</div>'
+    ]
+  },
+  {
+    latitude: 59.94,
+    longitude: 30.25,
+    hintContent: '<div class="map__hint">Малый проспект В О, д.64</div>',
+    balloonContent: [
+      '<div class="map__balloon">',
+      '<img class="map__burger-image" src="../img/content/burger-first.png" alt="Бургер"/>',
+      'Самые вкусные бургеры у нас! Заходите по адресу: Малый проспект В О, д.64',
+      '</div>'
+    ]
+  },
+  {
+    latitude: 59.93,
+    longitude: 30.34,
+    hintContent: '<div class="map__hint">наб.реки Фонтанки, д.56</div>',
+    balloonContent: [
+      '<div class="map__balloon">',
+      '<img class="map__burger-image" src="../img/content/burger-first.png" alt="Бургер"/>',
+      'Самые вкусные бургеры у нас! Заходите по адресу: наб.реки Фонтанки, д.56',
+      '</div>'
+    ]
+  },
+  {
+    latitude: 59.94,
+    longitude: 30.46,
+    hintContent: '<div class="map__hint">наб.реки Фонтанки, д.56</div>',
+    balloonContent: [
+      '<div class="map__balloon">',
+      '<img class="map__burger-image" src="../img/content/burger-first.png" alt="Бургер"/>',
+      'Самые вкусные бургеры у нас! Заходите по адресу: наб.реки Фонтанки, д.56',
+      '</div>'
+    ]
+  }
+];
+
+function init() {
+  var map = new ymaps.Map("map", {
+    center: [59.94, 30.32],
+    zoom: 12,
+    controls: ['zoomControl'],
+    behaviors: ['drag']
+  });
+  var geoObjects = [];
+  for (let i = 0; i <placemarks.length; i++) {
+    geoObjects[i] = new ymaps.Placemark(
+      [placemarks[i].latitude, placemarks[i].longitude],
+      {
+        hintContent: placemarks[i].hintContent,
+        balloonContent: placemarks[i].balloonContent.join('')
+      },
+      {
+        iconLayout: 'default#image',
+        iconImageHref: '../img/icons/map-marker.svg',
+        iconImageSize: [46,57],
+        iconImageOffset: [-23, -58]
+      }
+    );
+  }
+  var clusterer = new ymaps.Clusterer({
+    clusterIcons: [
+      {
+        href: '../img/content/burger-first.png',
+        size: [100,100],
+        offset: [-50,-50]
+      }
+    ],
+    clusterIconContentLayout: null
+  });
+  map.geoObjects.add(clusterer);
+  clusterer.add(geoObjects);
+}
