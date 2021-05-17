@@ -50,7 +50,10 @@
     color: $white;
     cursor: pointer;
     text-align: center;
-   
+    transition: .6s;
+    &:hover {
+      color: $yellow;
+    }
     &:before {
       content:"";
       width: rem(4px);
@@ -62,6 +65,10 @@
       position: absolute;
       top: -33%;
       left: 50%;
+      transition: .6s;
+      &:hover {
+        background-color: $yellow;
+      }
     }
     &:nth-child(1) {
       &:before{

@@ -18,6 +18,10 @@
   cursor: pointer;
   text-align: center;
   margin-right: rem(8px);
+  transition: .6s;
+  &:hover {
+    color: $yellow;
+  }
   &::before {
     content: "";
     width: rem(4px);
@@ -26,6 +30,10 @@
     border-radius: 50%;
     display: block;
     margin-right: rem(10px);
+    transition: .6s;
+    &:hover {
+      background-color: $yellow;
+    }
   }
 
   &:first-child {

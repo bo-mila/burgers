@@ -3,4 +3,8 @@
   width: rem(29px);
   height: rem(14px);
   fill: $white;
+  transition: .6s;
+  &:hover {
+    transform: scale(1.4);
+  }
 }
