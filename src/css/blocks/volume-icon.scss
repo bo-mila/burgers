@@ -1,0 +1,11 @@
+.volume-icon {
+  display: block;
+  width: rem(18px);
+  height: rem(22px);
+  opacity: .2;
+  fill: $white;
+  transition: .6s;
+  &:hover {
+    opacity: .6;
+  }
+}

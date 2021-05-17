@@ -1,0 +1,23 @@
+.title {
+  @include gagalin();
+  font-size: rem(72px);
+  color: $yellow;
+  line-height: 1;
+  text-align: center;
+  // text-transform: uppercase;
+
+  &--color {
+    &--black {
+      color: $black;
+    }
+    &--white {
+      color: $white;
+    }
+  }
+  @include tablets {
+    font-size: rem(64px);
+  }
+  @include phones {
+    font-size: rem(50px);
+  }
+}

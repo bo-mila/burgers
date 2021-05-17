@@ -1,0 +1,128 @@
+// .reviews {
+//   // @include tablets {
+//   //   height: 130vh;
+//   // }
+// }
+.reviews__list {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.reviews__item {
+  flex-basis: 25%;
+  height: 50%;
+  position: relative;
+  filter: grayscale(100%);
+
+  &:hover {
+    .reviews__hover {
+      transform: translate(-50%,-50%) scale(1);
+      opacity: 1;
+    }
+  }
+  @include tablets {
+    flex-basis: 50%;
+    height: 25%;
+  }
+}
+.reviews__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.reviews__hover {
+  // opacity: 0;
+  // color: $white;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // bottom: 0;
+  // right: 0;
+  // background-color: rgba($black,.3);
+  // transition: opacity .8s;
+  // font-size: rem(14px);
+  // padding-left: 9%;
+  // padding-right: 11%;
+  // padding-top: 13%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%,-50%) scale(.7);
+  opacity: 0;
+  padding: 17% 12% 0;
+  transition: .5s;
+  z-index: $z-reviews-hover;
+  background-color: rgba($black, .5);
+  font-size: rem(14px);
+  color: $white;
+
+  @include tablets {
+    text-align: center;
+    padding-top: 7%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  @include phones {
+    padding: 5%;
+    padding-top: 25%
+  }
+}
+.reviews__name {
+  @include gagalin();
+  text-transform: uppercase;
+  margin-bottom: rem(20px);
+
+  @include tablets {
+    margin-bottom: rem(10px);
+  }
+  @include phones {
+    font-size: rem(24px);
+    margin-bottom: rem(20px);
+  }
+}
+.reviews__text {
+  @include ubuntu(light);
+  margin-bottom: rem(20px);
+  overflow: hidden;
+  line-height: 1.71;
+
+  & p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    line-clamp: 7;
+    box-orient: vertical;
+    @include tablets {
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+    }
+  }
+  @include tablets {
+    line-height: 1.6;
+    margin-bottom: rem(8px);
+  }
+  @include phones {
+    display: none;
+  }
+}
+.reviews__btn {
+  
+  &--phones {
+    display: none;
+    margin: 0 auto;
+    @include phones {
+      display: block;
+    }
+  }
+  @include phones {
+    display: none;
+  }
+}

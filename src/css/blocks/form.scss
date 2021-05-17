@@ -1,0 +1,160 @@
+.form {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  @include tablets {
+    width: 70%;
+    flex-direction: column;
+  }
+  @include phones {
+    width: 100%;
+  }
+}
+.form__col {
+  width: calc(100%/2 - 1%);
+  display: flex;
+  flex-direction: column;
+  @include tablets {
+    width: 100%;
+    margin-bottom: rem(19px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.form__row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: rem(19px);
+  @include phones {
+    justify-content: center;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+.form__block {
+  flex: 1;
+  margin-right: rem(10px);
+  width: 100%;
+  color: $white;
+  @include tablets {
+  margin-right: rem(15px);
+  }
+  @include phones {
+    margin-right: rem(10px);
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &--mr0-in-phones {
+    @include phones {
+      margin-right: 0;
+    }
+  }
+  &--no-in-phones {
+    @include phones {
+      display: none;
+    }
+  }
+}
+.form__subtitle {
+  @include ubuntu(light);
+  font-size: rem(14px);
+  margin-bottom: rem(10px);
+}
+.form__input {
+  @include ubuntu(light);
+  font-size: rem(14px);
+  width: 100%;
+  background: $white;
+  border-radius: 3px;
+  // border: 2px solid transparent;
+  border: 2px solid $grey;
+  outline: none;
+  padding: rem(6px);
+  color: $black;
+  &:focus {
+    border-color: $yellow;
+  }
+}
+.form__input--textarea{
+  height: rem(90px);
+  resize: vertical;
+  
+  border: 2px solid transparent;
+  outline: none;
+  &:focus{
+    border-color: $yellow;
+  }
+ }
+ .form__option {
+   margin-right: rem(20px);
+   cursor: pointer;
+
+   &:last-child {
+     margin-right: 0;
+   }
+ }
+.option__radio {
+  display: none;
+
+  &:checked {
+    & ~ .option__title {
+      color: $red;
+      &::after {
+        display: block;
+      }
+      &::before {
+        border-color: $yellow;
+      }
+    }
+  }
+}
+.option__title {
+  display: flex;
+  color: $white;
+  @include ubuntu(light);
+  font-size: rem(14px);
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+    margin-right: rem(10px);
+    width: rem(15px);
+    height: rem(15px);
+    background-color: $white;
+    border-radius: 50%;
+  }
+
+  &:after{
+    content: "";
+    position: absolute;
+    display: none;
+    left: 3%;
+    top: 30%;
+    width: rem(7px);
+    height: rem(7px);
+    background-color: $red;
+    border-radius: 50%;
+  }
+}
+.form__btn {
+  margin-right: rem(10px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+}
+.error {
+  color: $red;
+}
